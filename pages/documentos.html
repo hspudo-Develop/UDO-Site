@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentos Oficiales - Unidad de Desarrollo Organizacional</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/assets/css/navbar.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+
+    <div id="navbar-container"></div>
+
+       <section class="hero">
+                    <div class="hero-container">
+                    <div class="hero-content">
+                        <h2>Hospital San Pablo de Coquimbo</h2>
+                        <h1>Documentación</h1>
+                        <p>
+                            Espacio institucional enfocado a la documentación oficial y vigente que orienta el funcionamiento, la gestión y el desarrollo organizacional del Hospital San Pablo de Coquimbo.
+                        </p>
+                    </div>
+                </div>
+        </section> 
+    <section class="docs-section">
+        <div class="docs-container">
+            
+            <div class="docs-card">
+                
+                <p class="docs-text-intro">
+                    En esta sección, los funcionarios y funcionarias del Hospital San Pablo de Coquimbo podrán acceder a la documentación oficial y vigente que orienta el funcionamiento, la gestión y el desarrollo organizacional de nuestra institución.
+                </p>
+
+                <p class="docs-text-intro margin-bottom-large">
+                    El propósito de este espacio es poner a disposición información actualizada, veraz y de fácil acceso, que permita fortalecer la transparencia interna, promover la gestión basada en evidencia y facilitar el trabajo colaborativo entre las distintas unidades y equipos del hospital.
+                </p>
+
+                <details class="docs-accordion">
+                    <summary class="docs-accordion-summary">
+                        Documentos disponibles
+                        
+                        <div class="docs-toggle-icon">
+                            <div id="bar1" class="bars"></div>
+                            <div id="bar2" class="bars"></div>
+                            <div id="bar3" class="bars"></div>
+                        </div>
+                    </summary>
+                    
+                    <div class="docs-accordion-content">
+                        <ul class="docs-list">
+                            <li>
+                                <strong>Organigrama Institucional:</strong> estructura formal que define los niveles jerárquicos, dependencias y relaciones funcionales del hospital.
+                            </li>
+                            <li>
+                                <strong>Planificación Estratégica:</strong> documento orientador que establece los ejes, objetivos y metas estratégicas de mediano y largo plazo de nuestra institución.
+                            </li>
+                            <li>
+                                <strong>Políticas de Gestión de Personas:</strong> lineamientos que regulan los procesos vinculados al desarrollo, bienestar y desempeño del personal del hospital.
+                            </li>
+                            <li>
+                                <strong>Manual del Consejo Técnico Ampliado:</strong> normativa que establece la estructura, roles, funcionamiento y atribuciones de este órgano técnico asesor.
+                            </li>
+                            <li>
+                                <strong>Manual de Organización del Comité Directivo:</strong> documento que define la composición, responsabilidades y procedimientos de trabajo del Equipo Directivo.
+                            </li>
+                            <li>
+                                <strong>Otros documentos oficiales:</strong> normativas, guías o procedimientos relevantes para el quehacer diario y la gestión interna.
+                            </li>
+                        </ul>
+                    </div>
+                </details>
+
+                <div class="docs-banner-footer">
+                    <p>
+                        De esta forma, la <strong>Subdirección de Gestión de Personas</strong> reafirma su compromiso con la transparencia, la comunicación efectiva y la mejora continua, asegurando que cada funcionario y funcionaria cuente con la información necesaria para desempeñar sus funciones de manera informada, coherente y alineada con los valores institucionales del Hospital San Pablo de Coquimbo.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="gallery-section">
+    <div class="gallery-section-header">
+        <h1>📚 Repositorio Digital Automatizado</h1>
+        <p>Documentación oficial de la UDO. Haz clic en cualquier tarjeta para abrir el documento original en tiempo real.</p>
+    </div>
+
+    <div class="search-container-udo">
+        <div class="search-box-wrapper">
+            <span class="search-box-icon">🔍</span>
+            <input type="text" id="udo-doc-search" placeholder="Escribe para buscar organigramas, reglamentos, flujogramas, politicas...">
+        </div>
+    </div>
+
+    <div class="slider-container-wrapper">
+        <button id="slider-btn-prev" class="slider-nav-btn prev" title="Ver anterior">‹</button>
+
+        <div id="pinterest-pdf-feed" class="pinterest-grid loading">
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+        </div>
+
+        <button id="slider-btn-next" class="slider-nav-btn next" title="Ver siguiente">›</button>
+    </div>
+    </section>
+
+    <div id="footer-container"></div>
+
+    <script src="/assets/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,150 @@
+ <!DOCTYPE html>
+<html lang="es">
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro de Atención UDO - Unidad de Desarrollo Organizacional</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/assets/css/navbar.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+
+    <div id="navbar-container"></div>
+
+    <section class="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h2>Hospital San Pablo de Coquimbo</h2>
+                    <h1>Apartado de Consultas</h1>
+                        <p>
+                            Entorno de atención para consultas relacionadas con el Manual Organizacional, Desarrollo Organizacional, Capacitación y Gestión de Personas.
+                        </p>
+                </div>
+            </div>
+    </section> 
+
+    <section class="consultas-section">
+        <div class="consultas-container">
+
+            <div class="consultas-header">
+                <h2>Centro de Atención UDO</h2>
+                <p>
+                    Selecciona una de las opciones disponibles para realizar una consulta
+                    o agendar una reunión con el equipo de Desarrollo Organizacional.
+                </p>
+            </div>
+
+            <div class="consultas-tabs">
+                <button class="tab-button active" data-tab="consultas">
+                    Canal de Consultas
+                </button>
+                <button class="tab-button" data-tab="agenda">
+                    Agendar Reunión
+                </button>
+            </div>
+
+            <div id="consultas" class="tab-content active">
+                <div class="consultas-card">
+                    
+                    <div class="consultas-info-box">
+                        <h3>Canal de Consultas y Orientación</h3>
+                        <p>
+                            Completa el siguiente formulario para comunicarte con el equipo
+                            de Desarrollo Organizacional.
+                        </p>
+                    </div>
+
+                    <form id="consultaForm">
+                        <div class="form-group">
+                            <label for="nombre">Nombre completo</label>
+                            <input type="text" id="nombre" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="correo">Correo institucional</label>
+                            <input type="email" id="correo" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="unidad">Unidad / Servicio</label>
+                            <input type="text" id="unidad" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tema">Tema de consulta</label>
+                            <select id="tema" class="form-control">
+                                <option>Seleccionar opción</option>
+                                <option>Manual Organizacional</option>
+                                <option>Desarrollo Organizacional</option>x
+                                <option>Gestión de Personas</option>
+                                <option>Otro</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="consulta">Describe tu consulta</label>
+                            <textarea id="consulta" class="form-control" required></textarea>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label for="archivo-adjunto" style="font-weight: bold; color: #1F2937;">
+                                 Archivo de Respaldo (Opcional):
+                            </label>
+    
+                            <input type="file" id="archivo-adjunto" accept=".pdf, .jpg, .jpeg, .png" style="display: block; margin-top: 8px;">
+    
+                            <small style="color: #6B7280; font-size: 12px;">
+                                Formatos permitidos: PDF o Imágenes (JPG, PNG).
+                            </small>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            Enviar consulta
+                        </button>
+                    </form>
+
+                    <div id="mensajeExito" class="success-message">
+                        Tu consulta fue enviada correctamente.
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="agenda" class="tab-content">
+                <div class="consultas-card">
+                    
+                    <div class="consultas-info-box">
+                        <h3>Agendamiento de Reuniones</h3>
+                        <p>
+                            Selecciona una fecha y horario disponible para coordinar una reunión
+                            con el equipo de Desarrollo Organizacional.
+                        </p>
+                    </div>
+
+                    <div class="calendly-container">
+                        <div class="calendly-inline-widget" data-url="https://calendly.com/hsp-udo/30min" style="min-width:320px;height:700px;"></div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div id="footer-container"></div>
+
+    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    <script src="/assets/js/main.js"></script>
+
+</body>
+
+</html>

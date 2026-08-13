@@ -1,0 +1,3155 @@
+/* ==========================================
+   🎨 VARIABLES GLOBALES DE MARCA UDO
+   ========================================== */
+:root {
+    --udo-azul: #1167a4;
+    --udo-azul-oscuro: #0b4b7a;
+    --udo-amarillo: #f6b01c;
+    --udo-amarillo-oscuro: rgb(252, 176, 24);
+    --udo-gris: #a0a09f;
+}
+
+/* BODY */
+body {
+    background: #F8F8F8;
+    font-family: 'Poppins', sans-serif;
+}
+
+body::before {
+    content: "";
+    position: fixed; /* Se queda fija al escrolear para cubrir siempre la pantalla */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    
+    /* RUTA DE TU IMAGEN */
+    background-image: url('/assets/img/logo-marca-agua.jpg'); 
+    
+    background-repeat: no-repeat;
+    background-position: center center; /* Centrada perfectamente en la pantalla */
+    
+    /* MODIFICADO: Forzamos a la imagen a ocupar el 100% del espacio disponible */
+    background-size: cover; 
+    
+    /* Opacidad configurada por el usuario */
+    opacity: 0.2; 
+    
+    z-index: -1; /* Se posiciona obligatoriamente detrás de todo el contenido */
+    pointer-events: none; /* Evita que interfiera con los clics, selecciones de texto o enlaces */
+}
+
+.hero {
+    padding: 100px 0; 
+    min-height: auto; 
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 850px; /* Evita que el texto se desarme en pantallas Ultra-Wide */
+    text-align: left; /* Alineación natural de lectura del portal institucional */
+}
+
+.hero-content h1 {
+    font-size: 42px; /* Escala tipográfica unificada */
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 18px;
+}
+
+
+.institutional-container,
+.team-container,
+.docs-container,
+.gallery-section {
+    max-width: 1400px; /* Sincronizado milimétricamente con el ancho de la Navbar y Footer */
+    margin: auto;
+    padding-left: 40px;
+    padding-right: 40px;
+    box-sizing: border-box;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: auto;
+    background: #FFFFFF;
+    padding: 80px;
+    border-radius: 32px;
+    box-shadow: 0 12px 34px rgba(0,0,0,0.06);
+}
+
+.hero h1 {
+    font-size: 58px;
+    line-height: 1.1;
+    text-align: center;
+    margin-bottom: 28px;
+    color: #2B2B2B;
+}
+
+.hero h2 {
+    font-size: 30px;
+    line-height: 1.1;
+    text-align: center;
+    margin-bottom: 28px;
+    color: #2B2B2B;
+    opacity: 0.4;
+}
+
+.hero p {
+    font-size: 20px;
+    line-height: 1.9;
+    text-align: justify;
+    max-width: 850px;
+    margin: auto;
+    color: #5E6B7A;
+}
+
+
+/* ==========================================
+   SECCION INSTITUCIONAL
+   ========================================== */
+.institutional-section {
+    padding: 0 40px 120px 40px;
+}
+
+.institutional-container {
+    max-width: 1200px;
+    margin: auto;
+    background: #FFFFFF;
+    padding: 80px;
+    border-radius: 32px;
+    box-shadow: 0 12px 34px rgba(0,0,0,0.06);
+}
+
+.institutional-icon {
+    font-size: 28px;
+    color: var(--udo-amarillo);
+    margin-bottom: 20px;
+}
+
+.institutional-divider {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 40px;
+}
+
+.divider-yellow {
+    width: 60px;
+    height: 4px;
+    background: var(--udo-amarillo);
+    border-radius: 2px;
+}
+
+.divider-light {
+    width: 60px;
+    height: 4px;
+    background: #EFEFEF;
+    border-radius: 2px;
+}
+
+.institutional-text {
+    margin-bottom: 40px;
+}
+
+.institutional-text p {
+    font-size: 18px;
+    line-height: 1.9;
+    color: #5E6B7A;
+    text-align: justify;
+    margin-bottom: 24px;
+}
+
+.institutional-text p:last-child {
+    margin-bottom: 0;
+}
+
+.institutional-highlight {
+    background: #F9F9F9;
+    padding: 40px;
+    border-radius: 24px;
+    margin-bottom: 40px;
+    border-left: 5px solid var(--udo-amarillo);
+}
+
+.highlight-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.highlight-header h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #2B2B2B;
+}
+
+.highlight-items {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.highlight-item span {
+    color: var(--udo-amarillo);
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.highlight-item p {
+    font-size: 17px;
+    line-height: 1.6;
+    color: #5E6B7A;
+    margin: 0;
+    text-align: justify;
+}
+
+.institutional-footer {
+    padding-top: 20px;
+    border-top: 1px solid #EFEFEF;
+}
+
+.institutional-footer p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #2B2B2B;
+    text-align: justify;
+}
+
+.institutional-footer strong {
+    color: var(--udo-amarillo);
+    font-weight: 600;
+}
+
+/* ==========================================
+   SECCIÓN PERSONAL DEL AREA
+   ========================================== */
+.team-section {
+    padding: 0 40px 120px 40px;
+    background: #F8F8F8;
+}
+
+.team-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.team-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.team-header h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #2B2B2B;
+    letter-spacing: 0.5px;
+}
+
+.team-divider {
+    width: 240px;
+    height: 4px;
+    background: var(--udo-amarillo);
+    margin: 16px auto 28px auto;
+    border-radius: 2px;
+}
+
+.team-intro {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #5E6B7A;
+    max-width: 950px;
+    margin: auto;
+    text-align: center;
+}
+
+.team-grid {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+/* Tarjeta Base */
+.team-card {
+    position: relative;
+    background: #FFFFFF;
+    border-radius: 28px;
+    padding: 40px 30px 30px 30px;
+    width: 100%;
+    max-width: 440px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-top: 6px solid transparent;
+    overflow: visible;
+    cursor: pointer;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, z-index 0.4s ease;
+}
+
+/* Feedback visual al pasar el mouse (Hover suave) */
+.team-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.06);
+}
+
+.card-blue { border-top-color: var(--udo-azul); }
+.card-yellow { border-top-color: var(--udo-amarillo); }
+
+.avatar-bg {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    overflow: hidden;
+}
+
+.bg-light-blue { background: #E6F0FA; }
+.bg-light-yellow { background: #FFF8E6; }
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-card h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--udo-azul);
+    margin-bottom: 8px;
+}
+
+.role-badge {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--udo-amarillo);
+    margin-bottom: 4px;
+}
+
+.dots-placeholder {
+    color: #C0C0C0;
+    margin-bottom: 24px;
+}
+
+.card-contact-box {
+    width: 100%;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+}
+
+.box-blue { background: #F4F7FC; }
+.box-yellow { background: #FFFDF6; }
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.contact-icon {
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.contact-text {
+    font-size: 13.5px;
+    line-height: 1.4;
+    color: #4A5568;
+    word-break: break-word;
+}
+
+/* ==========================================
+   LOGICA DE EXPANSIÓN POR CLIC (Sincronizado)
+   ========================================== */
+
+.card-hidden-info {
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease, visibility 0.4s ease;
+    
+    width: 100%;
+    border-radius: 20px;
+    padding: 0 20px;
+    text-align: left;
+    margin-top: -10px;
+}
+
+.info-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2B2B2B;
+    margin-bottom: 8px;
+}
+
+.info-list {
+    list-style: disc;
+    margin-left: 20px;
+    font-size: 13.5px;
+    color: #4A5568;
+    line-height: 1.5;
+}
+
+/* Icono Indicador de Expansión (Flecha) */
+.card-toggle-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 12px;
+    color: #C0C0C0;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* ESTADO EXPANDIDO (Clase activa inyectada por JS) */
+.team-card.is-expanded {
+    z-index: 10;
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+
+.team-card.is-expanded .card-hidden-info {
+    max-height: 300px; /* Espacio suficiente para listas completas */
+    opacity: 1;
+    visibility: visible;
+    padding: 20px;
+}
+
+.team-card.is-expanded .card-toggle-icon {
+    transform: rotate(180px);
+    color: #2B2B2B;
+}
+
+
+
+/* ==========================================
+   PÁGINA PRINCIPAL DE DOCUMENTOS (Con icono Uiverse)
+   ========================================== */
+
+.docs-section {
+    padding: 60px 40px 120px 40px;
+    background: #F8F8F8;
+}
+
+.docs-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Tarjeta contenedora de documentos */
+.docs-card {
+    max-width: 1050px;
+    margin: auto;
+    padding: 42px;
+    background: #FFFFFF;
+    border-radius: 18px;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.07);
+    border-top: 6px solid var(--udo-amarillo);
+    font-family: 'Source Sans 3', sans-serif;
+    color: #2D3748;
+    line-height: 1.9;
+}
+
+/* Párrafos introductorios */
+.docs-text-intro {
+    font-size: 22px;
+    margin-bottom: 24px;
+    text-align: justify;
+}
+
+.margin-bottom-large {
+    margin-bottom: 34px;
+}
+
+/* Acordeón nativo (<details>) */
+.docs-accordion {
+    background: #FFF9E8;
+    border-left: 6px solid var(--udo-amarillo);
+    border-radius: 14px;
+    margin-bottom: 36px;
+    overflow: hidden;
+    transition: background 0.3s ease;
+}
+
+/* Cabecera del acordeón (<summary>) */
+.docs-accordion-summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 28px 32px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    color: var(--udo-amarillo-oscuro);
+    font-weight: 600;
+    outline: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.docs-accordion-summary::-webkit-details-marker {
+    display: none;
+}
+
+/* ------------------------------------------
+   ESTILOS ADAPTADOS DEL ICONO (Uiverse)
+   ------------------------------------------ */
+
+.docs-toggle-icon {
+    position: relative;
+    width: 36px; /* Ajustado proporcionalmente al texto de la cabecera */
+    height: 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 8px;
+    transition: transform 0.5s ease;
+}
+
+.bars {
+    width: 100%;
+    height: 4px;
+    background-color: var(--udo-amarillo-oscuro); /* Adaptado al color dorado institucional */
+    border-radius: 4px;
+    transition: transform 0.5s ease, width 0.5s ease, opacity 0.3s ease;
+}
+
+#bar1 {
+    width: 50%;
+}
+
+#bar2 {
+    width: 75%;
+}
+
+#bar3 {
+    width: 100%; /* El tercer barra toma el ancho total por defecto */
+}
+
+/* ------------------------------------------
+   ESTADO ACTIVADO: Cuando el acordeón está [open]
+   ------------------------------------------ */
+
+/* Rotación completa de la caja contenedora */
+.docs-accordion[open] .docs-toggle-icon {
+    transform: rotate(180deg);
+}
+
+/* Forzar posicionamiento absoluto interno para cruzarse perfectamente */
+.docs-accordion[open] .docs-toggle-icon .bars {
+    position: absolute;
+}
+
+/* La barra del medio se desvanece de inmediato */
+.docs-accordion[open] .docs-toggle-icon #bar2 {
+    transform: scaleX(0);
+    opacity: 0;
+}
+
+/* La barra superior se estira y rota 45 grados hacia la derecha */
+.docs-accordion[open] .docs-toggle-icon #bar1 {
+    width: 100%;
+    transform: rotate(45deg);
+}
+
+/* La barra inferior se rota -45 grados hacia la izquierda formando la X */
+.docs-accordion[open] .docs-toggle-icon #bar3 {
+    width: 100%;
+    transform: rotate(-45deg);
+}
+
+/* ------------------------------------------
+   CONTENIDO INTERNO DEL LISTADO
+   ------------------------------------------ */
+
+.docs-accordion-content {
+    padding: 0 32px 32px 32px;
+}
+
+.docs-list {
+    padding-left: 24px;
+    margin: 0;
+    font-size: 20px;
+    list-style-type: disc;
+}
+
+.docs-list li {
+    margin-bottom: 18px;
+    text-align: justify;
+}
+
+.docs-list li:last-child {
+    margin-bottom: 0;
+}
+
+/* Banner de cierre institucional */
+.docs-banner-footer {
+    background: linear-gradient(135deg, var(--udo-amarillo) 0%, var(--udo-amarillo-oscuro) 100%);
+    padding: 34px;
+    border-radius: 16px;
+    color: #2D3748;
+}
+
+.docs-banner-footer p {
+    margin: 0;
+    font-size: 21px;
+    text-align: justify;
+    line-height: 1.9;
+}
+
+
+/* AIREEEEEEEEEEEEEEEEEEEEEEE*/
+
+.docs-card {
+    padding: 20px; /* Esto ya le da un aire espectacular a tu tarjeta de documentos */
+}
+
+.hero {
+    margin-bottom: 60px; /* Empuja la sección de abajo para que respire el diseño */
+}
+
+
+
+/* ==========================================
+   CONSULTAS HTML 
+   ========================================== */
+
+/* ==========================================
+   PÁGINA DE CONTACTO Y ATENCIÓN (CONSULTAS)
+   ========================================== */
+
+.consultas-section {
+    padding: 60px 40px 120px 40px;
+    background: transparent; /* Permite ver la marca de agua global body::before */
+}
+
+.consultas-container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 40px 30px;
+    font-family: 'Source Sans 3', sans-serif;
+    background: #FFFFFF;
+    border-radius: 18px;
+    border: 1px solid #E5EAF2;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.04);
+}
+
+/* Encabezado */
+.consultas-header {
+    border-left: 6px solid var(--udo-amarillo);
+    padding-left: 20px;
+    margin-bottom: 30px;
+}
+
+.consultas-header h2 {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: var(--udo-azul);
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.consultas-header p {
+    margin-top: 12px;
+    color: #4F5B6B;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+/* Pestañas (Tabs) */
+.consultas-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.tab-button {
+    padding: 14px 22px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    background: #EAF1F8;
+    color: var(--udo-azul);
+    
+    /* Transiciones dinámicas solicitadas */
+    transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.tab-button:hover {
+    background: #D4E4F1;
+    transform: translateY(-2px);
+}
+
+.tab-button:active {
+    transform: translateY(0);
+}
+
+.tab-button.active {
+    background: var(--udo-azul);
+    color: #FFFFFF;
+    box-shadow: 0 4px 12px rgba(17, 103, 164, 0.25);
+}
+
+/* Contenido de Pestañas con Animación Fade-In */
+.tab-content {
+    display: none;
+    animation: contactFadeEffect 0.4s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes contactFadeEffect {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Tarjeta interna (Card) */
+.consultas-card {
+    background: #FFFFFF;
+    border-radius: 18px;
+    padding: 35px;
+    box-shadow: 0 6px 24px rgba(17, 103, 164, 0.08);
+}
+
+/* Bloque informativo interno */
+.consultas-info-box {
+    background: #EEF5FC;
+    border: 1px solid #D6E6F5;
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.consultas-info-box h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: var(--udo-azul);
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+}
+
+.consultas-info-box p {
+    margin: 0;
+    color: #4F5B6B;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+/* Formulario */
+.form-group {
+    margin-bottom: 22px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #243447;
+    font-size: 16px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #D7DEE8;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: 'Source Sans 3', sans-serif;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    
+    /* Transición suave para la iluminación del campo */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto focus iluminado premium */
+.form-control:focus {
+    outline: none;
+    border-color: var(--udo-azul);
+    box-shadow: 0 0 0 4px rgba(17, 103, 164, 0.12);
+}
+
+textarea.form-control {
+    height: 160px;
+    resize: vertical;
+}
+
+/* Botón de envío */
+.submit-btn {
+    background: var(--udo-azul);
+    color: #FFFFFF;
+    border: none;
+    padding: 15px 28px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(17, 103, 164, 0.18);
+    
+    /* Transiciones fluidas del botón */
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: var(--udo-azul-oscuro);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(17, 103, 164, 0.3);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+/* Mensaje de éxito */
+.success-message {
+    display: none;
+    margin-top: 25px;
+    background: #E8F5E9;
+    border: 1px solid #C8E6C9;
+    color: #2E7D32;
+    padding: 18px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    animation: contactFadeEffect 0.3s ease;
+}
+
+/* Contenedor adaptativo de Calendly */
+.calendly-container {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #E5EAF2;
+}
+
+/* Ajustes de responsividad */
+@media(max-width:768px) {
+    .consultas-container {
+        padding: 25px 20px;
+    }
+
+    .consultas-header h2 {
+        font-size: 26px;
+    }
+
+    .consultas-tabs {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .tab-button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ==========================================
+   COMPONENTE FOOTER GLOBAL (Con Mapa e Información)
+   ========================================== */
+
+.footer {
+    /* 🚨 Fondo con imagen y capa negra de opacidad al 90% */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.25)), 
+                      url('https://raw.githubusercontent.com/hspudo-Develop/Repo_IMG_HSP_Coquimbo/refs/heads/main/Banner%202.0.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    color: #FFFFFF;
+    font-family: 'Source Sans 3', sans-serif;
+    padding-top: 60px;
+    position: relative;
+    z-index: 100; /* Asegura quedar por encima de la marca de agua global */
+    width: 100%;
+    overflow: hidden;
+}
+
+.footer-container {
+    max-width: 1400px; /* Alineado exactamente al ancho máximo de tu Navbar */
+    margin: auto;
+    padding: 0 40px 50px 40px;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap; /* Soporte adaptativo para pantallas medianas */
+}
+
+/* Columnas Base */
+.footer-col {
+    flex: 1 1 300px; /* Crece y se encoge de manera proporcional, base de 300px */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Columna 1: Marca Corporativa */
+.footer-brand .footer-logo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--udo-amarillo); /* Tu amarillo institucional */
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-brand .logo-icon {
+    font-size: 20px;
+}
+
+.footer-description {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #A0AEC0; /* Gris claro de alta legibilidad sobre fondo oscuro */
+}
+
+/* Títulos de las Columnas */
+.footer-col h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin-bottom: 12px;
+}
+
+/* Separadores Dorados */
+.footer-divider-small {
+    width: 40px;
+    height: 3px;
+    background: var(--udo-amarillo);
+    border-radius: 2px;
+    margin-bottom: 24px;
+}
+
+/* Columna 2: Datos de Contacto */
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.footer-contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.footer-contact-item .contact-icon {
+    font-size: 18px;
+    line-height: 1;
+    margin-top: 2px;
+}
+
+.footer-contact-item .contact-text {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #E2E8F0;
+    margin: 0;
+}
+
+/* Columna 3: Contenedor del Mapa */
+.footer-map-wrapper {
+    width: 100%;
+    height: 180px; /* Altura controlada para mantener armonía visual */
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto hover suave en el mapa al interactuar */
+.footer-map-wrapper:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* Barra de Créditos Inferior */
+.footer-bottom {
+    background: rgba(0, 0, 0, 0.4); /* Capa oscura semitransparente para un remate sutil */
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 24px 40px;
+}
+
+.footer-bottom-container {
+    max-width: 1400px;
+    margin: auto;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    color: #718096;
+    margin: 0;
+}
+
+/* ==========================================
+   DISEÑO RESPONSIVO (Ajustes para celulares)
+   ========================================== */
+
+@media (max-width: 768px) {
+    .footer-container {
+        padding: 0 24px 40px 24px;
+        flex-direction: column;
+        gap: 36px;
+    }
+
+    .footer-col {
+        flex: 1 1 100%;
+    }
+
+    .footer-map-wrapper {
+        height: 220px; /* Un poco más alto en móviles para mejorar la usabilidad táctil */
+    }
+
+    .footer-bottom {
+        padding: 20px 24px;
+    }
+}
+
+
+/* ==========================================
+   PÁGINA INTERNA: MANUAL ORGANIZACIONAL (Looker Studio + Contenido Completo)
+   ========================================== */
+
+.manual-section {
+    padding: 60px 40px 120px 40px;
+    background: transparent; /* Permite que la marca de agua global body::before sea visible */
+}
+
+.manual-container {
+    max-width: 1250px;
+    margin: auto;
+}
+
+/* Tarjeta principal blanca */
+.manual-card {
+    background: #FFFFFF;
+    border-radius: 24px;
+    padding: 42px;
+    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.05);
+    border-top: 6px solid var(--udo-amarillo); /* Amarillo institucional */
+    font-family: 'Source Sans 3', sans-serif;
+    color: #2D3748;
+    line-height: 1.9;
+}
+
+/* Área de encabezado interno con la viñeta circular */
+.manual-title-area {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #FFF1C7;
+    padding-bottom: 20px;
+}
+
+.manual-bullet {
+    width: 18px;
+    height: 18px;
+    background: var(--udo-amarillo);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.manual-title-area h2 {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 36px;
+    color: var(--udo-amarillo-oscuro);
+    font-weight: 700;
+}
+
+/* Textos informativos de introducción */
+.manual-text-intro {
+    font-size: 22px;
+    margin-bottom: 24px;
+    text-align: justify;
+}
+
+.manual-card .margin-bottom-large {
+    margin-bottom: 34px;
+}
+
+/* Base general para el summary del acordeón */
+.manual-accordion-summary {
+    cursor: pointer;
+    list-style: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    outline: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.manual-accordion-summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Contenido de los paneles desplegables */
+.manual-accordion-content {
+    padding: 0 32px 32px 32px;
+}
+
+.manual-content-p {
+    font-size: 21px;
+    margin-top: 0;
+    margin-bottom: 24px;
+    text-align: justify;
+}
+
+.manual-content-p.no-margin {
+    margin-bottom: 0;
+}
+
+/* Listado de viñetas internas */
+.manual-list {
+    padding-left: 24px;
+    margin: 0;
+    font-size: 20px;
+    list-style-type: disc;
+}
+
+.manual-list li {
+    margin-bottom: 16px;
+    text-align: justify;
+}
+
+.manual-list li:last-child {
+    margin-bottom: 0;
+}
+
+/* DESPLEGABLE 1: CONFIGURACIÓN CAJA AMARILLA */
+.manual-accordion-yellow {
+    background: #FFF9E8;
+    border-left: 6px solid var(--udo-amarillo);
+    border-radius: 14px;
+    margin-bottom: 36px;
+    overflow: hidden;
+}
+
+.manual-accordion-summary.color-gold {
+    color: var(--udo-amarillo-oscuro);
+    padding: 26px 30px;
+}
+
+/* DESPLEGABLE 2: CONFIGURACIÓN CAJA GRADIENTE */
+.manual-accordion-gradient {
+    background: linear-gradient(135deg, var(--udo-amarillo) 0%, var(--udo-amarillo-oscuro) 100%);
+    border-radius: 16px;
+    margin-top: 10px;
+    margin-bottom: 36px;
+    overflow: hidden;
+}
+
+.manual-accordion-summary.color-dark {
+    color: #2D3748;
+    padding: 28px 32px;
+}
+
+.manual-accordion-content.color-dark {
+    padding: 0 34px 34px 34px;
+    color: #2D3748;
+}
+
+/* ------------------------------------------
+   ESTILOS DE LOS ICONOS ANIMADOS (Uiverse Adaptados)
+   ------------------------------------------ */
+.manual-toggle-icon {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 8px;
+    transition: transform 0.5s ease;
+    flex-shrink: 0;
+}
+
+.manual-toggle-icon .bars {
+    width: 100%;
+    height: 4px;
+    border-radius: 4px;
+    transition: transform 0.5s ease, width 0.5s ease, opacity 0.3s ease;
+}
+
+#bar1 { width: 50%; }
+#bar2 { width: 75%; }
+#bar3 { width: 100%; }
+
+/* Ajuste de color de las barras según el fondo del bloque */
+.icon-gold .bars { background-color: var(--udo-amarillo-oscuro); }
+.icon-dark .bars { background-color: #2D3748; }
+
+/* ------------------------------------------
+   ESTADO ABIERTO [open]: Transformación en Cruz (X)
+   ------------------------------------------ */
+.manual-accordion-yellow[open] .manual-toggle-icon,
+.manual-accordion-gradient[open] .manual-toggle-icon {
+    transform: rotate(180deg);
+}
+
+.manual-accordion-yellow[open] .bars,
+.manual-accordion-gradient[open] .bars {
+    position: absolute;
+}
+
+/* Desvanecer la barra central */
+.manual-accordion-yellow[open] #bar2,
+.manual-accordion-gradient[open] #bar2 {
+    transform: scaleX(0);
+    opacity: 0;
+}
+
+/* Cruzar barra superior */
+.manual-accordion-yellow[open] #bar1,
+.manual-accordion-gradient[open] #bar1 {
+    width: 100%;
+    transform: rotate(45deg);
+}
+
+/* Cruzar barra inferior */
+.manual-accordion-yellow[open] #bar3,
+.manual-accordion-gradient[open] #bar3 {
+    width: 100%;
+    transform: rotate(-45deg);
+}
+
+/* Espaciador de aire para separar los bloques de la tabla interactiva */
+.manual-spacer {
+    height: 14px;
+}
+
+/* CONTENEDOR DE LA TABLA DE LOOKER STUDIO */
+.dashboard-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 16px;
+    box-shadow: inset 0 0 0 1px #EFEFEF, 0 4px 20px rgba(0, 0, 0, 0.02);
+    background: #FFFFFF;
+    -webkit-overflow-scrolling: touch;
+}
+
+.dashboard-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.dashboard-wrapper::-webkit-scrollbar-track {
+    background: #F4F7FC;
+    border-radius: 10px;
+}
+
+.dashboard-wrapper::-webkit-scrollbar-thumb {
+    background: #D7DEE8;
+    border-radius: 10px;
+}
+
+.dashboard-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #B4C1D1;
+}
+
+.looker-iframe {
+    width: 1100px;
+    height: 825px;
+    display: block;
+    border: none;
+    margin: auto;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .manual-section {
+        padding: 40px 20px 80px 20px;
+    }
+    
+    .manual-card {
+        padding: 24px;
+        border-radius: 18px;
+    }
+
+    .manual-title-area h2 {
+        font-size: 26px;
+    }
+
+    .manual-accordion-summary {
+        font-size: 20px;
+    }
+    
+    .manual-text-intro, .manual-content-p, .manual-list {
+        font-size: 17px;
+    }
+}
+
+/* ==========================================
+   AJUSTES PARA DISPOSITIVOS MÓVILES
+   ========================================== */
+
+@media (max-width: 768px) {
+    .manual-section {
+        padding: 40px 20px 80px 20px;
+    }
+    
+    .manual-card {
+        padding: 24px;
+        border-radius: 18px;
+    }
+
+    .manual-header h2 {
+        font-size: 24px;
+    }
+    
+    .manual-header p {
+        font-size: 16px;
+    }
+}
+
+/* ==========================================
+   PÁGINA INTERNA: MANUAL DE PROCEDIMIENTOS
+   ========================================== */
+
+.procedimiento-section {
+    padding: 60px 40px 120px 40px;
+    background: transparent; /* Permite ver la marca de agua global del fondo */
+}
+
+.procedimiento-container {
+    max-width: 1250px;
+    margin: auto;
+}
+
+/* Tarjeta principal blanca */
+.procedimiento-card {
+    padding: 42px;
+    background: #FFFFFF;
+    border-radius: 24px; /* Sincronizado a 24px como manual-card */
+    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.05); /* Sincronizado con la sombra premium de manual-card */
+    border-top: 6px solid var(--udo-amarillo); /* Amarillo institucional */
+    font-family: 'Source Sans 3', sans-serif;
+    color: #2D3748;
+    line-height: 1.9;
+}
+
+/* Área del título con viñeta circular */
+.procedimiento-title-area {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #FFF1C7;
+    padding-bottom: 20px;
+}
+
+.procedimiento-bullet {
+    width: 18px;
+    height: 18px;
+    background: var(--udo-amarillo);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.procedimiento-title-area h2 {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 36px;
+    color: var(--udo-amarillo-oscuro);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+/* Párrafos de introducción */
+.procedimiento-text-intro {
+    font-size: 22px;
+    margin-bottom: 24px;
+    text-align: justify;
+}
+
+.procedimiento-card .margin-bottom-large {
+    margin-bottom: 34px;
+}
+
+/* DESPLEGABLE: CAJA AMARILLA */
+.procedimiento-accordion-yellow {
+    background: #FFF9E8;
+    border-left: 6px solid var(--udo-amarillo);
+    border-radius: 14px;
+    margin-bottom: 36px;
+    overflow: hidden;
+}
+
+.procedimiento-accordion-summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 28px 32px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    color: var(--udo-amarillo-oscuro);
+    font-weight: 600;
+    outline: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.procedimiento-accordion-summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Contenido interno del desplegable */
+.procedimiento-accordion-content {
+    padding: 0 32px 32px 32px;
+}
+
+.procedimiento-content-p {
+    font-size: 21px;
+    margin-top: 0;
+    margin-bottom: 24px;
+    text-align: justify;
+}
+
+/* Listado de viñetas */
+.procedimiento-list {
+    padding-left: 24px;
+    margin: 0;
+    font-size: 20px;
+    list-style-type: disc;
+}
+
+.procedimiento-list li {
+    margin-bottom: 18px;
+    text-align: justify;
+}
+
+.procedimiento-list li:last-child {
+    margin-bottom: 0;
+}
+
+/* ------------------------------------------
+   ICONO ANIMADO DEL DESPLEGABLE (Uiverse)
+   ------------------------------------------ */
+.procedimiento-toggle-icon {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 8px;
+    transition: transform 0.5s ease;
+    flex-shrink: 0;
+}
+
+.procedimiento-toggle-icon .bars {
+    width: 100%;
+    height: 4px;
+    background-color: var(--udo-amarillo-oscuro); /* Dorado a juego con el texto */
+    border-radius: 4px;
+    transition: transform 0.5s ease, width 0.5s ease, opacity 0.3s ease;
+}
+
+#bar1 { width: 50%; }
+#bar2 { width: 75%; }
+#bar3 { width: 100%; }
+
+/* Transformación en cruz (X) al abrirse [open] */
+.procedimiento-accordion-yellow[open] .procedimiento-toggle-icon {
+    transform: rotate(180deg);
+}
+
+.procedimiento-accordion-yellow[open] .bars {
+    position: absolute;
+}
+
+.procedimiento-accordion-yellow[open] #bar2 {
+    transform: scaleX(0);
+    opacity: 0;
+}
+
+.procedimiento-accordion-yellow[open] #bar1 {
+    width: 100%;
+    transform: rotate(45deg);
+}
+
+.procedimiento-accordion-yellow[open] #bar3 {
+    width: 100%;
+    transform: rotate(-45deg);
+}
+
+/* BANNER DE CIERRE INSTITUCIONAL */
+.procedimiento-banner-footer {
+    background: linear-gradient(135deg, var(--udo-amarillo) 0%, var(--udo-amarillo-oscuro) 100%);
+    padding: 34px;
+    border-radius: 16px;
+    color: #2D3748;
+}
+
+.procedimiento-banner-footer p {
+    margin: 0;
+    font-size: 21px;
+    text-align: justify;
+    line-height: 1.9;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .procedimiento-section {
+        padding: 40px 20px 80px 20px;
+    }
+    
+    .procedimiento-card {
+        padding: 24px;
+        border-radius: 18px;
+    }
+
+    .procedimiento-title-area h2 {
+        font-size: 26px;
+    }
+
+    .procedimiento-accordion-summary {
+        font-size: 20px;
+    }
+    
+    .procedimiento-text-intro, 
+    .procedimiento-content-p, 
+    .procedimiento-list {
+        font-size: 17px;
+    }
+}
+
+/* Espaciador de aire universal para separar bloques de textos de las tablas de Looker Studio */
+.manual-spacer {
+    height: 36px; /* Aumentado a 36px para dar un "aire" mucho más sofisticado y limpio antes del repositorio */
+}
+
+/* ==========================================
+   PÁGINA INTERNA: PERFILES DE CARGO
+   ========================================== */
+
+.perfil-section {
+    padding: 60px 40px 120px 40px;
+    background: transparent; /* Permite visualizar la marca de agua trasera */
+}
+
+.perfil-container {
+    max-width: 1250px; /* Ancho máximo idéntico al manual organizacional para simetría total */
+    margin: auto;
+}
+
+/* Tarjeta principal blanca */
+.perfil-card {
+    padding: 42px;
+    background: #FFFFFF;
+    border-radius: 24px;
+    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.05);
+    border-top: 6px solid var(--udo-amarillo); /* Amarillo institucional */
+    font-family: 'Source Sans 3', sans-serif;
+    color: #2D3748;
+    line-height: 1.9;
+}
+
+/* Área de encabezado con viñeta circular */
+.perfil-title-area {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #FFF1C7;
+    padding-bottom: 20px;
+}
+
+.perfil-bullet {
+    width: 18px;
+    height: 18px;
+    background: var(--udo-amarillo);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.perfil-title-area h2 {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 36px;
+    color: var(--udo-amarillo-oscuro);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+/* Párrafos de introducción */
+.perfil-text-intro {
+    font-size: 22px;
+    margin-bottom: 24px;
+    text-align: justify;
+}
+
+.perfil-card .margin-bottom-large {
+    margin-bottom: 34px;
+}
+
+/* DESPLEGABLE: CAJA AMARILLA */
+.perfil-accordion-yellow {
+    background: #FFF9E8;
+    border-left: 6px solid var(--udo-amarillo);
+    border-radius: 14px;
+    margin-bottom: 36px;
+    overflow: hidden;
+}
+
+.perfil-accordion-summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 28px 32px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    color: var(--udo-amarillo-oscuro);
+    font-weight: 600;
+    outline: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.perfil-accordion-summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Contenido interno */
+.perfil-accordion-content {
+    padding: 0 32px 32px 32px;
+}
+
+.perfil-content-p {
+    font-size: 21px;
+    margin-top: 0;
+    margin-bottom: 24px;
+    text-align: justify;
+}
+
+/* Listado de viñetas */
+.perfil-list {
+    padding-left: 24px;
+    margin: 0;
+    font-size: 20px;
+    list-style-type: disc;
+}
+
+.perfil-list li {
+    margin-bottom: 18px;
+    text-align: justify;
+}
+
+.perfil-list li:last-child {
+    margin-bottom: 0;
+}
+
+/* ------------------------------------------
+   ICONO ANIMADO DEL DESPLEGABLE (Uiverse)
+   ------------------------------------------ */
+.perfil-toggle-icon {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 8px;
+    transition: transform 0.5s ease;
+    flex-shrink: 0;
+}
+
+.perfil-toggle-icon .bars {
+    width: 100%;
+    height: 4px;
+    background-color: var(--udo-amarillo-oscuro);
+    border-radius: 4px;
+    transition: transform 0.5s ease, width 0.5s ease, opacity 0.3s ease;
+}
+
+#bar1 { width: 50%; }
+#bar2 { width: 75%; }
+#bar3 { width: 100%; }
+
+/* Transformación en cruz (X) al abrirse [open] */
+.perfil-accordion-yellow[open] .perfil-toggle-icon {
+    transform: rotate(180deg);
+}
+
+.perfil-accordion-yellow[open] .bars {
+    position: absolute;
+}
+
+.perfil-accordion-yellow[open] #bar2 {
+    transform: scaleX(0);
+    opacity: 0;
+}
+
+.perfil-accordion-yellow[open] #bar1 {
+    width: 100%;
+    transform: rotate(45deg);
+}
+
+.perfil-accordion-yellow[open] #bar3 {
+    width: 100%;
+    transform: rotate(-45deg);
+}
+
+/* BANNER DE CIERRE INSTITUCIONAL */
+.perfil-banner-footer {
+    background: linear-gradient(135deg, var(--udo-amarillo) 0%, var(--udo-amarillo-oscuro) 100%);
+    padding: 34px;
+    border-radius: 16px;
+    color: #2D3748;
+}
+
+.perfil-banner-footer p {
+    margin: 0;
+    font-size: 21px;
+    text-align: justify;
+    line-height: 1.9;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .perfil-section {
+        padding: 40px 20px 80px 20px;
+    }
+    
+    .perfil-card {
+        padding: 24px;
+        border-radius: 18px;
+    }
+
+    .perfil-title-area h2 {
+        font-size: 26px;
+    }
+
+    .perfil-accordion-summary {
+        font-size: 20px;
+    }
+    
+    .perfil-text-intro, 
+    .perfil-content-p, 
+    .perfil-list {
+        font-size: 17px;
+    }
+}
+
+
+/* ==========================================
+   MEJORAS GLOBALES DE INTERACCIÓN (Sugerencias)
+   ========================================== */
+
+/* 1. Iluminación de la pestaña activa en el Navbar */
+.navbar-menu a.active-nav-link,
+.dropdown-menu a.active-nav-link {
+    color: var(--udo-amarillo) !important; /* Tu color amarillo corporativo principal */
+    position: relative;
+}
+
+/* Opcional: Un pequeño puntito sutil debajo del enlace activo del menú principal */
+.navbar-menu a.active-nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background: var(--udo-amarillo);
+    border-radius: 50%;
+}
+
+/* Exclusión del puntito para los enlaces del submenú desplegable */
+.dropdown-menu a.active-nav-link::after {
+    display: none;
+}
+
+
+/* 2. Botón Flotante Volver Arriba */
+.back-to-top-btn {
+    position: fixed;
+    bottom: 35px;
+    right: 35px;
+    width: 50px;
+    height: 50px;
+    background: var(--udo-azul); /* Tu azul corporativo oscuro */
+    color: #FFFFFF;
+    border: none;
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(17, 103, 164, 0.3);
+    z-index: 9990; /* Se posiciona por encima de las tarjetas pero debajo del menú fijo */
+    
+    /* Estado inicial oculto */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    
+    /* Transiciones suaves de aparición e interacción */
+    transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Estado Activo (Inyectado por Scroll en JS) */
+.back-to-top-btn.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Feedback al pasar el mouse (Hover) */
+.back-to-top-btn:hover {
+    background: var(--udo-amarillo); /* Cambia a amarillo dorado corporativo */
+    transform: translateY(-4px);
+    box-shadow: 0 6px 22px rgba(246, 176, 28, 0.4);
+}
+
+/* Ajuste responsivo para que no tape contenido en pantallas móviles */
+@media (max-width: 768px) {
+    .back-to-top-btn {
+        bottom: 24px;
+        right: 24px;
+        width: 44px;
+        height: 44px;
+        font-size: 14px;
+    }
+}
+
+
+/* ==========================================
+   MEJORAS GLOBALES: LÍNEA ANIMADA MAGNÉTICA (CORREGIDA)
+   ========================================== */
+
+/* Color del texto para el enlace activo */
+.navbar-menu a.active-nav-link,
+.dropdown-menu a.active-nav-link {
+    color: var(--udo-amarillo) !important;
+}
+
+/* Configuración base para todos los enlaces del menú */
+.navbar-menu a {
+    position: relative;
+    text-decoration: none;
+}
+
+/* Contenedor de la línea con reset absoluto de óvalo y desplazamiento */
+.navbar-menu a::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 50%; /* Nace en el centro */
+    width: 0;  /* Inicia sin ancho */
+    height: 3px; /* Grosor lineal elegante */
+    background: var(--udo-amarillo);
+    
+    /* CORRECCIÓN: Forzamos línea recta y anulamos el desvío hacia la izquierda del punto viejo */
+    border-radius: 2px !important; 
+    transform: none !important; 
+    
+    /* Transición para el efecto Hover manual */
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+/* EFECTO HOVER: La línea se estira limpia desde el centro hacia los lados */
+.navbar-menu a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* EFECTO AL CARGAR PÁGINA (Pestaña Activa) */
+.navbar-menu a.active-nav-link::after {
+    width: 100%;
+    left: 0;
+    border-radius: 2px !important;
+    transform: none !important; /* Asegura que la línea activa no se mueva de su lugar */
+    animation: menuLineReveal 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* Exclusión obligatoria para los submenús del dropdown */
+.dropdown-menu a::after {
+    display: none !important;
+}
+
+/* ------------------------------------------
+   KEYFRAMES DE LA ANIMACIÓN MAGNÉTICA (SIN DESVÍOS)
+   ------------------------------------------ */
+@keyframes menuLineReveal {
+    from {
+        width: 0;
+        left: 50%;
+    }
+    to {
+        width: 100%;
+        left: 0;
+    }
+}
+
+
+/* ==========================================
+   EFECTO SKELETON LOADER (LOOKER STUDIO)
+   ========================================== */
+.dashboard-wrapper {
+    position: relative;
+    min-height: 400px; 
+}
+
+.skeleton-loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1100px; 
+    height: 825px;
+    padding: 40px;
+    background: #FFFFFF;
+    display: none; 
+    flex-direction: column;
+    gap: 20px;
+    z-index: 5;
+    box-sizing: border-box;
+}
+
+.dashboard-wrapper.loading .skeleton-loader {
+    display: flex;
+}
+
+.skeleton-header, .skeleton-row {
+    width: 100%;
+    background: linear-gradient(90deg, #F2F4F7 25%, #E4E7EC 50%, #F2F4F7 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite linear;
+    border-radius: 8px;
+}
+
+.skeleton-header { height: 60px; width: 40%; margin-bottom: 20px; }
+.skeleton-row { height: 45px; }
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+
+
+/* ==========================================
+   BOTONES FLOTANTES GLOBALES (Accesibilidad y UX)
+   ========================================== */
+
+/* 🔊 Botón del Lector de Voz (Esquina Inferior Izquierda) */
+.voice-reader-btn {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    background-color: var(--udo-azul); /* Azul corporativo */
+    color: #FFFFFF;
+    border: none;
+    padding: 12px 22px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    z-index: 99999; /* Se asegura de flotar por encima de manuales y Looker Studio */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el mouse por encima del lector */
+.voice-reader-btn:hover {
+    background-color: var(--udo-amarillo); /* Cambia al amarillo dorado UDO */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(246, 176, 28, 0.3);
+}
+
+/* Estado animado dinámico cuando la plataforma está LEYENDO */
+.voice-reader-btn.is-reading {
+    background-color: #D93025; /* Cambia a rojo de detención */
+    animation: pulse-wave-udo 1.5s infinite;
+}
+
+/* ▲ Botón "Volver Arriba" (Esquina Inferior Derecha) */
+.back-to-top-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #2B2B2B;
+    color: #FFFFFF;
+    border: none;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Se activa automáticamente mediante JS cuando el usuario baja en la página */
+.back-to-top-btn.is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top-btn:hover {
+    background-color: var(--udo-amarillo);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(246, 176, 28, 0.3);
+}
+
+/* 🌊 Animación de pulso de onda para el lector de pantalla activo */
+@keyframes pulse-wave-udo {
+    0% {
+        box-shadow: 0 0 0 0 rgba(217, 48, 37, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 14px rgba(217, 48, 37, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(217, 48, 37, 0);
+    }
+}
+
+
+/* ==========================================
+   SELECTOR DE ACCESIBILIDAD DE FUENTES
+   ========================================== */
+.font-accessibility-selector {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 15px;
+}
+
+.font-btn {
+  background: #F5F5F5;
+  border: 1px solid #E0E0E0;
+  color: #2B2B2B;
+  padding: 5px 10px;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.font-btn:hover {
+  background: var(--udo-amarillo);
+  color: #FFFFFF;
+  border-color: var(--udo-amarillo);
+  transform: translateY(-1px);
+}
+
+.font-btn:active {
+  transform: translateY(0);
+}
+
+/* --- Estados de Escala Controlados desde el Body --- */
+
+/* Aumentar tamaño (A+) */
+body.font-size-increased p,
+body.font-size-increased li,
+body.font-size-increased div.institutional-text,
+body.font-size-increased .tab-content,
+body.font-size-increased label {
+  font-size: 150% !important;
+}
+body.font-size-increased h1,
+body.font-size-increased h2,
+body.font-size-increased h3 {
+  font-size: 200% !important;
+}
+
+/* Disminuir tamaño (A-) */
+body.font-size-decreased p,
+body.font-size-decreased li,
+body.font-size-decreased div.institutional-text,
+body.font-size-decreased .tab-content,
+body.font-size-decreased label {
+  font-size: 88% !important;
+}
+body.font-size-decreased h1,
+body.font-size-decreased h2,
+body.font-size-decreased h3 {
+  font-size: 92% !important;
+}
+
+
+/* ==========================================
+   MICRO-ASISTENTE DE GUÍA (LOOKER STUDIO)
+   ========================================== */
+
+/* Asegurar que el contenedor del iframe permita posicionar elementos adentro */
+.dashboard-wrapper {
+    position: relative;
+}
+
+/* 💡 Botón Burbuja de Ayuda (?) */
+.looker-help-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--udo-amarillo); /* Amarillo UDO */
+    color: #FFFFFF;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.looker-help-btn:hover {
+    background-color: var(--udo-azul); /* Cambia al azul corporativo */
+    transform: scale(1.1) rotate(15deg);
+    box-shadow: 0 6px 15px rgba(17, 103, 164, 0.4);
+}
+
+/* 🪟 Estructura del Modal Emergente Global */
+.looker-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100000; /* Por encima de todo */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Fondo oscurecido con efecto Blur */
+.looker-modal-backdrop {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+}
+
+/* Caja contenedora de la guía */
+.looker-modal-content {
+    position: relative;
+    background-color: #FFFFFF;
+    width: 90%;
+    max-width: 640px;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    font-family: 'Source Sans 3', sans-serif;
+    transform: translateY(-30px);
+    transition: all 0.3s ease;
+    z-index: 100001;
+}
+
+/* Activar visualmente el modal */
+.looker-modal.is-active {
+    opacity: 1;
+    visibility: visible;
+}
+.looker-modal.is-active .looker-modal-content {
+    transform: translateY(0);
+}
+
+/* Botón de cerrar (X) */
+.looker-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #888888;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.looker-modal-close:hover {
+    color: #D93025;
+}
+
+/* Cabecera del modal */
+.looker-modal-header h3 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--udo-azul);
+    font-size: 20px;
+    margin: 0 0 8px 0;
+}
+.looker-modal-header p {
+    color: #666666;
+    font-size: 14px;
+    margin: 0 0 25px 0;
+}
+
+/* Contenedor de pasos en columnas */
+.looker-modal-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* Tarjeta individual de paso */
+.looker-step-card {
+    background-color: #F8F9FA;
+    border: 1px solid #EAEAEA;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+.looker-step-card .step-icon {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+.looker-step-card h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #2B2B2B;
+    margin: 0 0 6px 0;
+}
+.looker-step-card p {
+    font-size: 13px;
+    color: #555555;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Pie del modal */
+.looker-modal-footer {
+    border-top: 1px solid #EAEAEA;
+    padding-top: 15px;
+    text-align: right;
+    font-size: 12px;
+    color: #999999;
+    font-weight: 600;
+}
+
+/* --- Extensión de Posicionamiento para la Guía de Consultas --- */
+.consultas-container {
+    position: relative; /* Permite anclar la burbuja '?' en la esquina superior derecha */
+}
+
+/* Ajuste sutil para que en pantallas móviles la burbuja no tape las pestañas */
+@media (max-width: 768px) {
+    .consultas-container .looker-help-btn {
+        top: -10px;
+        right: 10px;
+    }
+}
+
+.footer {
+    position: relative; /* ¡Clave fundamental para la suspensión nativa! */
+    width: 100%;
+    background-color: #2B2B2B;
+    color: #FFFFFF;
+    overflow: hidden;
+    /* Transición suave y limpia al estirarse y encogerse */
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), padding 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    max-height: 500px;
+    padding: 40px 0;
+}
+
+.footer.shrink {
+    max-height: 50px;
+    padding: 12px 0;
+    background-color: #1A1A1A;
+}
+
+/* Ocultar elementos internos suavemente al comprimir */
+.footer.shrink .footer-grid, 
+.footer.shrink .footer-map {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.2s ease;
+}
+
+.footer .footer-grid,
+.footer .footer-map {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s;
+}
+
+/* ==========================================
+   NUEVO LOGO CON ENLACE DE SUBTÍTULO DIRECTO (BLINDADO)
+   ========================================== */
+
+/* Alinea las letras de UDO y el link del hospital en una columna perfecta */
+.navbar .navbar-container .navbar-logo {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+}
+
+/* Enlace principal (UDO) */
+.logo-main-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    line-height: 1.1;
+}
+
+/* 🌐 El enlace directo del Hospital (Subtítulo - Versión Micro-Texto) */
+.navbar .navbar-container .navbar-logo a.logo-hospital-sublink {
+    font-size: 11px !important; /* Forzamos tamaño ultra compacto y legible */
+    color: var(--udo-gris) !important; /* Gris claro sutil que pasa a segundo plano */
+    text-decoration: none !important; /* Elimina cualquier subrayado de la 'a' general */
+    text-transform: none !important; /* Evita que se ponga en mayúsculas fijas */
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 400 !important; /* Peso de fuente delgado y limpio */
+    margin-top: 1px !important; /* Pegado inmediato abajo de la palabra UDO */
+    letter-spacing: 0.3px !important; /* Espaciado sutil para mejorar legibilidad */
+    display: inline-block !important;
+    line-height: 1.1 !important;
+    opacity: 0.85 !important;
+    white-space: nowrap !important;
+    /* Transición calibrada a 0.3s para que el desvanecimiento sea perfectamente fluido */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important; 
+}
+
+/* Efecto hover al pasar el cursor */
+.navbar .navbar-container .navbar-logo a.logo-hospital-sublink:hover {
+    color: var(--udo-amarillo) !important; /* Cambia al amarillo dorado de la UDO */
+    opacity: 1 !important;
+    text-decoration: none !important; /* Mantiene la estética minimalista sin subrayar */
+}
+
+/* 🏎️ CONTROL DE AMORTIGUACIÓN: Cuando la barra se encoje por el scroll, 
+   el subtítulo se oculta limpiamente con alta especificidad */
+.navbar.shrink .navbar-container .navbar-logo a.logo-hospital-sublink {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    max-height: 0 !important;
+    margin-top: 0 !important;
+    pointer-events: none !important; /* Desactiva el clic mientras está oculto */
+    transform: translateY(-4px) !important; /* Pequeño efecto de desplazamiento hacia arriba al esconderse */
+}
+
+
+
+/* ==========================================
+   FEED ESTILO PINTEREST PARA DOCUMENTOS PDF
+   ========================================== */
+.gallery-section {
+    padding: 60px 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+.gallery-section-header h2 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--udo-azul);
+    font-size: 26px;
+    margin-bottom: 8px;
+}
+.gallery-section-header p {
+    font-family: 'Source Sans 3', sans-serif;
+    color: #666666;
+    font-size: 15px;
+    margin-bottom: 35px;
+}
+
+.pinterest-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)) !important;
+    gap: 25px !important;
+    min-height: 300px; /* Asegura un área mínima visible en la pantalla */
+}
+
+
+/* Estructura de la Tarjeta de PDF */
+.pdf-pinterest-card {
+    position: relative;
+    background-color: #FFFFFF;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    aspect-ratio: 3 / 4; /* Mantiene la proporción física de una hoja vertical */
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Renderizado automático de la portada física */
+.pdf-pinterest-card .card-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* 🕶️ Filtro degradado superior de contraste */
+.pdf-pinterest-card .card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.2) 40%, transparent 100%);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    z-index: 2;
+}
+
+/* Título flotante en capas superiores */
+.pdf-pinterest-card .card-title {
+    font-family: 'Poppins', sans-serif;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Corta el texto estéticamente a 3 líneas si es muy largo */
+    line-clamp:3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Efectos Hover dinámicos */
+.pdf-pinterest-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(17, 103, 164, 0.18); /* Sombra azul institucional */
+}
+.pdf-pinterest-card:hover .card-thumbnail {
+    transform: scale(1.04); /* Sutil zoom de la imagen de fondo */
+}
+
+/* 🔄 Animación del Skeleton Loader */
+.pinterest-grid.loading .skeleton-card {
+    background: linear-gradient(90deg, #F0F0F0 25%, #E5E5E5 50%, #F0F0F0 75%);
+    background-size: 200% 100%;
+    animation: loadingSkeletonUdo 1.5s infinite;
+    border-radius: 14px;
+    aspect-ratio: 3 / 4;
+}
+@keyframes loadingSkeletonUdo {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* Fondo de respaldo si la miniatura de Google Drive no carga de inmediato */
+.pdf-pinterest-card.no-thumb {
+    background: linear-gradient(135deg, var(--udo-azul) 0%, var(--udo-azul-oscuro) 100%) !important;
+}
+.pdf-pinterest-card.no-thumb .card-overlay {
+    background: transparent !important;
+    justify-content: center !important; /* Centra el título en la tarjeta */
+    align-items: center !important;
+    text-align: center;
+}
+.pdf-pinterest-card.no-thumb .card-title {
+    font-size: 16px !important;
+    text-shadow: 0 4px 8px rgba(0,0,0,0.3) !important;
+}
+
+
+/* ==========================================
+   GALERÍA HORIZONTAL DE DOCUMENTOS (SLIDER)
+   ========================================== */
+
+.gallery-section {
+    padding: 40px 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+    overflow: hidden; /* Evita que el contenedor rompa los márgenes de la pantalla */
+}
+
+/* 🏎️ El Contenedor Maestro cambiado a Fila Flexible */
+.pinterest-grid {
+    display: flex !important; /* Cambiamos de Grid a Flex para alinear en horizontal */
+    flex-direction: row !important;
+    overflow-x: auto !important; /* Habilita el scroll de izquierda a derecha */
+    overflow-y: hidden !important; /* Bloquea por completo el desborde vertical */
+    gap: 20px !important;
+    width: 100% !important;
+    padding: 15px 5px !important;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* Deslizamiento ultra suave en pantallas táctiles */
+    
+    /* 🎯 SCROLL SNAP: Hace que las tarjetas se "imanten" suavemente al deslizar */
+    scroll-snap-type: x mandatory; 
+}
+
+/* 🎴 Ajuste crítico de las Tarjetas para mantener su tamaño físico en la fila */
+.pdf-pinterest-card, .pinterest-grid.loading .skeleton-card {
+    flex: 0 0 260px !important; /* 🚨 EVITA QUE SE ENCOJAN. Ancho fijo de 260px por tarjeta */
+    aspect-ratio: 3 / 4; /* Proporción de hoja vertical intacta */
+    border-radius: 14px;
+    scroll-snap-align: start; /* Punto de anclaje para el efecto imán */
+    position: relative;
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover adaptado para no romper el flujo lateral */
+.pdf-pinterest-card:hover {
+    transform: translateY(-5px); /* Se eleva sutilmente hacia arriba */
+    box-shadow: 0 10px 20px rgba(17, 103, 164, 0.15);
+}
+
+/* Portadas e imágenes internas */
+.pdf-pinterest-card .card-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+.pdf-pinterest-card:hover .card-thumbnail {
+    transform: scale(1.03);
+}
+
+/* 🕶️ Capa de contraste superior para el texto */
+.pdf-pinterest-card .card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.2) 40%, transparent 100%);
+    padding: 18px;
+    z-index: 2;
+}
+.pdf-pinterest-card .card-title {
+    font-family: 'Poppins', sans-serif;
+    color: #FFFFFF;
+    font-size: 13.5px;
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Fondo de respaldo si falla la miniatura */
+.pdf-pinterest-card.no-thumb {
+    background: linear-gradient(135deg, var(--udo-azul) 0%, var(--udo-azul-oscuro) 100%) !important;
+}
+.pdf-pinterest-card.no-thumb .card-overlay {
+    background: transparent !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* ==========================================
+   🎨 DISEÑO PREMIUM DE LA BARRA DE DESLIZAMIENTO
+   ========================================== */
+.pinterest-grid::-webkit-scrollbar {
+    height: 7px; /* Barra horizontal delgada y elegante */
+}
+.pinterest-grid::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: 10px;
+}
+.pinterest-grid::-webkit-scrollbar-thumb {
+    background: rgba(17, 103, 164, 0.3); /* Azul institucional con transparencia */
+    border-radius: 10px;
+    transition: background 0.2s ease;
+}
+.pinterest-grid::-webkit-scrollbar-thumb:hover {
+    background: var(--udo-amarillo); /* Se oscurece al pasar el mouse */
+}
+
+
+.pinterest-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    gap: 20px !important;
+    width: 100% !important;
+    padding: 15px 5px !important;
+    -webkit-overflow-scrolling: touch;
+    
+    /* 🚨 CRÍTICO: Debe ser auto para que el reciclaje de tarjetas no genere saltos visuales bruscos */
+    scroll-behavior: auto !important; 
+    scroll-snap-type: none !important; 
+}
+
+/* ==========================================
+   MÓDULO SLIDER PREMIUM: BOTONES Y BARRA OCULTA
+   ========================================== */
+
+/* Contenedor relativo que encierra el carrusel y las flechas */
+.slider-container-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* 🙈 OCULTAR LA BARRA DE DESPLAZAMIENTO POR COMPLETO */
+.pinterest-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    gap: 20px !important;
+    width: 100% !important;
+    padding: 15px 5px !important;
+    -webkit-overflow-scrolling: touch;
+    
+    /* Obligatorio 'auto' para que nuestro motor JS maneje los píxeles con precisión quirúrgica */
+    scroll-behavior: auto !important; 
+    scroll-snap-type: none !important;
+
+    /* Ocultar en Chrome, Safari y Opera */
+    &::-webkit-scrollbar {
+        display: none !important;
+    }
+    /* Ocultar en Firefox y Edge */
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+}
+
+/* ==========================================
+   🎯 ESTILO: BOTONES FLOTANTES LATERALES (METIDOS HACIA ADENTRO)
+   ========================================== */
+.slider-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;  /* Ajuste compacto y elegante */
+    height: 40px;
+    
+    /* 💎 Efecto Glassmorphism (Cristal Esmerilado) */
+    background-color: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 50%; /* Círculo perfecto */
+    color: var(--udo-azul); /* Flecha en azul institucional por defecto */
+    font-size: 18px;
+    
+    /* 📐 Centrado Flexbox Matemático e Indestructible */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    z-index: 99;
+    user-select: none;
+    
+    /* Transición elástica de alta velocidad para todos los estados */
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* 🎯 CORREGIDO: Valores positivos para meter las flechas dentro del carrusel */
+.slider-nav-btn.prev { 
+    left: 15px; 
+}
+.slider-nav-btn.next { 
+    right: 15px; 
+}
+
+/* 🖱️ FEEDBACK INTERACTIVO AL PASAR EL MOUSE (HOVER) */
+.slider-nav-btn:hover {
+    background-color: var(--udo-amarillo); /* Se ilumina en amarillo para llamar a la acción */
+    color: #FFFFFF; /* Flecha blanca para contraste perfecto */
+    border-color: var(--udo-amarillo);
+    box-shadow: 0 8px 25px rgba(246, 176, 28, 0.4); /* Resplandor dorado corporativo */
+}
+
+/* 🏎️ Efecto magnético: Expansión y empuje direccional simultáneo */
+.slider-nav-btn.prev:hover {
+    transform: translateY(-50%) translateX(-4px) scale(1.05); 
+}
+
+.slider-nav-btn.next:hover {
+    transform: translateY(-50%) translateX(4px) scale(1.05); 
+}
+
+/* 💥 EFECTO DE BOTÓN FÍSICO HUNDIDO AL HACER CLIC */
+.slider-nav-btn:active {
+    transform: translateY(-50%) scale(0.92) !important; /* Se contrae denotando presión física */
+    box-shadow: 0 2px 8px rgba(246, 176, 28, 0.2);
+}
+
+/* 📱 Ocultar en Tablets y Móviles (Fomenta el deslizamiento táctil nativo 'Swipe') */
+@media (max-width: 768px) {
+    .slider-nav-btn {
+        display: none !important;
+    }
+}
+/* ==========================================
+   🔍 COMPONENTE: BUSCADOR PREDICTIVO UDO
+   ========================================== */
+.search-container-udo {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 30px auto; /* Centrado y separado del slider */
+    padding: 0 5px;
+}
+
+.search-box-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: #FFFFFF;
+    border: 2px solid #E5E7EB;
+    border-radius: 30px; /* Bordes completamente redondeados modernos */
+    padding: 6px 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.search-box-icon {
+    font-size: 18px;
+    color: #9CA3AF;
+    margin-right: 12px;
+    user-select: none;
+}
+
+#udo-doc-search {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 15px;
+    color: #1F2937;
+    font-weight: 500;
+}
+
+#udo-doc-search::placeholder {
+    color: #9CA3AF;
+    font-weight: 400;
+}
+
+
+/* ==========================================
+   👁️ COMPONENTE: VISOR MODAL DE PDFS (QUICK VIEW)
+   ========================================== */
+
+/* Telón de fondo oscuro y difuminado */
+.udo-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(15, 32, 55, 0.65); /* Azul oscuro traslúcido */
+    backdrop-filter: blur(10px); /* Efecto vidrio esmerilado premium */
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999 !important; /* Por encima de todo el ecosistema web */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Estado Activo: Desbloquea el modal */
+.udo-modal-overlay.is-open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Caja contenedora del PDF */
+.udo-modal-container {
+    background-color: #FFFFFF;
+    width: 92%;
+    max-width: 1100px;
+    height: 88vh;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    
+    /* Animación de entrada elástica */
+    transform: scale(0.92);
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.udo-modal-overlay.is-open .udo-modal-container {
+    transform: scale(1);
+}
+
+/* Botón de Cierre Circular Flotante */
+.udo-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 26px;
+    font-weight: 300;
+    color: #4B5563;
+    cursor: pointer;
+    z-index: 100001;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: all 0.2s ease;
+}
+.udo-modal-close:hover {
+    background-color: #D93025; /* Rojo de advertencia al hover */
+    color: #FFFFFF;
+    border-color: #D93025;
+    transform: scale(1.05) rotate(90deg);
+}
+
+/* Cuerpo del visor donde vive el iframe */
+.udo-modal-body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #F3F4F6;
+}
+
+.udo-modal-body iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+/* Seguro de Scroll: Evita que la página principal se mueva de fondo mientras lees */
+body.udo-modal-lock {
+    overflow: hidden !important;
+    padding-right: 0px; /* Evita tirones del layout */
+}
+
+/* ==========================================
+   🔊 CONTROL DE ACCESIBILIDAD: BOTÓN DE AUDIO DESACOPLADO
+   ========================================== */
+
+.udo-audio-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    background-color: #F3F4F6 !important; /* Gris clínico claro base */
+    border: 1px solid #E5E7EB !important;
+    padding: 8px 18px !important;
+    border-radius: 20px !important; /* Bordes redondeados tipo píldora ejecutiva */
+    color: #4B5563 !important; /* Máxima legibilidad de contraste */
+    font-family: 'Source Sans 3', sans-serif !important;
+    font-size: 13.5px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    user-select: none !important;
+    outline: none !important;
+}
+
+/* Hover Interactivo: Cambio impecable al azul institucional de la UDO */
+.udo-audio-btn:hover {
+    background-color: var(--udo-azul) !important;
+    color: #FFFFFF !important;
+    border-color: var(--udo-azul) !important;
+    box-shadow: 0 4px 12px rgba(17, 103, 164, 0.2) !important;
+    transform: translateY(-1px) !important;
+}
+
+/* 🟢 ESTADO ACTIVO (is-playing): Cambia a verde esmeralda con onda de sonido expansiva */
+.udo-audio-btn.is-playing {
+    background-color: #d36363 !important; 
+    color: #FFFFFF !important;
+    border-color: #ca3737 !important;
+    animation: udoPulseAudioEfecto 1.6s infinite ease-in-out !important; /* Dispara el bucle de pulso */
+}
+
+.udo-audio-btn.is-playing:hover {
+    background-color: #960505 !important; /* Un tono más oscuro si el usuario va a clickear para pausar */
+    border-color: #960505 !important;
+}
+
+/* Ajustes finos de los componentes internos */
+.udo-audio-btn .audio-icon {
+    font-size: 7px !important;
+    line-height: 1 !important;
+}
+
+.udo-audio-btn .audio-text {
+    letter-spacing: 0.2px !important;
+}
+
+/* 🌊 MOTOR DE ANIMACIÓN: EFECTO DE ONDA RADIAL SÓNICA */
+@keyframes udoPulseAudioEfecto {
+    0% {
+        box-shadow: 0 0 0 0 rgba(185, 16, 16, 0.5);
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02); /* Micro-expansión respiratoria para simular habla */
+    }
+    70% {
+        /* La onda se expande hacia afuera y se vuelve completamente invisible */
+        box-shadow: 0 0 0 12px rgba(16, 185, 129, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+        transform: scale(1);
+    }
+}
+
+/* ==========================================
+   ✨ COMPONENTE: BADGE AUTOMÁTICO DE NOVEDAD
+   ========================================== */
+
+.udo-badge-nuevo {
+    position: absolute !important;
+    bottom: 15px !important;
+    right: 15px !important;
+    background: linear-gradient(135deg, #ffd24a 0%, var(--udo-amarillo) 100%) !important; /* Degradado esmeralda premium */
+    color: #FFFFFF !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    padding: 4px 10px !important;
+    border-radius: 30px !important;
+    letter-spacing: 0.6px !important;
+    z-index: 5 !important; /* Flota holgadamente sobre el overlay de la tarjeta */
+    box-shadow: 0 4px 10px rgba(246, 176, 28, 0.35) !important;
+    pointer-events: none; /* Traspasa los clicks hacia la tarjeta para no bloquear la navegación */
+    
+    /* Dispara la animación de latido continuo */
+    animation: udoLatidoBadgeNuevo 2.2s infinite ease-in-out !important; 
+}
+
+/* 🌊 Micro-expansión sónica para denotar frescura en el documento */
+@keyframes udoLatidoBadgeNuevo {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 4px 10px rgba(185, 182, 16, 0.35);
+    }
+    50% {
+        transform: scale(1.05); /* Se agranda un 5% milimétricamente */
+        box-shadow: 0 4px 14px rgba(139, 141, 6, 0.6);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 4px 10px rgba(252, 199, 28, 0.35);
+    }
+}
+
+/* ==========================================
+   🌀 COMPONENTE: SPINNER DE CARGA BOTÓN UDO
+   ========================================== */
+
+/* Aseguramos que el botón pueda alinear el texto y la ruedita */
+.udo-btn-enviar {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Espacio entre el texto y la ruedita */
+    transition: all 0.3s ease;
+}
+
+/* La ruedita de carga (oculta por defecto) */
+.udo-spinner {
+    width: 18px;
+    height: 18px;
+    border: 3px solid rgba(255, 255, 255, 0.3); /* Anillo transparente */
+    border-top: 3px solid #FFFFFF; /* Color de la línea que gira */
+    border-radius: 50%;
+    animation: udo-giro 1s linear infinite;
+    display: none; /* Escondida hasta que JS la llame */
+}
+
+/* Animación infinita de rotación */
+@keyframes udo-giro {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 🔥 LA CLASE QUE ACTIVA JAVASCRIPT DURANTE EL ENVÍO 🔥 */
+.udo-btn-enviar.is-loading {
+    opacity: 0.7 !important;
+    cursor: not-allowed !important;
+    pointer-events: none !important; /* Bloquea clics extra físicamente */
+}
+
+/* Cuando el botón tiene la clase "is-loading", mostramos la ruedita */
+.udo-btn-enviar.is-loading .udo-spinner {
+    display: inline-block;
+}
+
+
+
+
+/* ==========================================
+   📂 INPUT DE ARCHIVO DIRECTO (Sin tocar HTML)
+   ========================================== */
+
+/* 1. Estilizamos la caja completa (el fondo y el texto que dice "Ningún archivo seleccionado") */
+#archivo-adjunto {
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    color: #4B5563; /* Gris oscuro para el texto del archivo */
+    background-color: #F9FAFB; /* Fondo súper clarito */
+    border: 2px dashed #D1D5DB; /* Borde punteado de zona de carga */
+    border-radius: 8px;
+    padding: 6px;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+#archivo-adjunto:hover {
+    border-color: var(--udo-azul); /* Se pinta corporativo al pasar el mouse */
+}
+
+/* 2. LA MAGIA: Estilizamos exclusivamente el botón nativo que dice "Seleccionar archivo" */
+#archivo-adjunto::file-selector-button {
+    background-color: #E5E7EB; /* Gris clarito para el botón */
+    color: #1F2937; /* Letra oscura */
+    border: 1px solid #D1D5DB;
+    border-radius: 6px;
+    padding: 8px 16px;
+    margin-right: 15px; /* Separación con el nombre del archivo */
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* 3. Efecto al pasar el mouse por encima del botón */
+#archivo-adjunto::file-selector-button:hover {
+    background-color: var(--udo-amarillo); /* Amarillo corporativo */
+    color: #FFFFFF; /* Letra blanca */
+    border-color: var(--udo-amarillo-oscuro);
+}
+
+/* 4. Efecto al hacer clic en el botón */
+#archivo-adjunto::file-selector-button:active {
+    transform: scale(0.96);
+}
+
+/* ==========================================
+   📏 BARRA DE PROGRESO DE LECTURA GLOBAL
+   ========================================== */
+.udo-scroll-progress-container {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 6px; /* 🚨 Lo subimos a 6px temporalmente para verla bien */
+    background: transparent;
+    z-index: 999999; /* 🚨 Z-index bestial para asegurar que esté sobre todo */
+    pointer-events: none;
+}
+
+.udo-scroll-progress-bar {
+    height: 100%;
+    background: var(--udo-amarillo, #f6b01c); 
+    width: 50%; /* 🚨 CAMBIO CLAVE: Forzamos al 50% temporalmente */
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    transition: width 0.1s ease-out;
+}
+
+
+/* ==========================================
+   💧 MARCA DE AGUA GLOBAL (FONDO INCLINADO)
+   ========================================== */
+body::before {
+    content: "";
+    position: fixed; 
+    top: 0;
+    left: 0;
+    
+    /* 🚨 Ampliamos un poco el lienzo fantasma para que al girar no se corten las esquinas */
+    width: 120vw;
+    height: 120vh;
+    margin-top: -10vh;
+    margin-left: -10vw;
+    
+    /* TU IMAGEN DE MARCA DE AGUA */
+    background-image: url('https://raw.githubusercontent.com/hspudo-Develop/Repo_IMG_HSP_Coquimbo/refs/heads/main/Sub_Logo-removebg-preview.png');
+    
+    background-repeat: no-repeat;
+    background-position: center center; 
+    background-size: 50%; /* Puedes agrandarlo o achicarlo */
+    opacity: 0.60; 
+    z-index: -10; 
+    pointer-events: none; 
+    
+    /* 📐 LA MAGIA DE LA INCLINACIÓN */
+    transform: rotate(10deg); /* Valores negativos giran a la izquierda, positivos a la derecha */
+    transform-origin: center center; /* Asegura que rote perfectamente sobre su propio eje */
+}
+/*Se deben ajustar los CSS para que queden con un aspecto similar al que se trabaja en el del HSP log*/
+
+
+
