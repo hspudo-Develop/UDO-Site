@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // ==========================================
     const navbarContainer = document.getElementById('navbar-container');
     if (navbarContainer) {
-        fetch('/components/navbar.html')
+        fetch('./components/navbar.html')
             .then(response => {
                 if (!response.ok) throw new Error("Error al cargar el navbar.html");
                 return response.text();
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // --- CARGA DEL FOOTER INSTITUCIONAL ---
     const footerContainer = document.getElementById('footer-container');
     if (footerContainer) {
-        fetch('/components/footer.html')
+        fetch('./components/footer.html')
             .then(response => {
                 if (!response.ok) throw new Error("Error al cargar el footer.html");
                 return response.text();
