@@ -3119,7 +3119,7 @@ body.udo-modal-lock {
     transition: width 0.1s ease-out;
 }
 
-
+ 
 /* ==========================================
    💧 MARCA DE AGUA GLOBAL (FONDO INCLINADO)
    ========================================== */
@@ -3149,7 +3149,3 @@ body::before {
     transform: rotate(10deg); /* Valores negativos giran a la izquierda, positivos a la derecha */
     transform-origin: center center; /* Asegura que rote perfectamente sobre su propio eje */
 }
-/*Se deben ajustar los CSS para que queden con un aspecto similar al que se trabaja en el del HSP log*/
-
-
-
