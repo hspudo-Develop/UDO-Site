@@ -1,11 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+    // --- RUTA INTELIGENTE ---
+    // Detectamos en qué nivel de carpeta estamos para ajustar la ruta de los fetch
+    const currentPath = window.location.pathname;
+    let rutaBase = './'; // Ruta por defecto para el index.html
+
+    if (currentPath.includes('/pages/documentos/')) {
+        rutaBase = '../../'; // Dos pasos atrás para los manuales
+    } else if (currentPath.includes('/pages/')) {
+        rutaBase = '../';    // Un paso atrás para consultas y documentos principales
+    }
+
     // ==========================================
     // 1. CARGA DE COMPONENTES DINÁMICOS (Navbar & Footer)
     // ==========================================
     const navbarContainer = document.getElementById('navbar-container');
     if (navbarContainer) {
-        fetch('./components/navbar.html')
+        // Usamos la ruta inteligente calculada arriba
+        fetch(rutaBase + 'components/navbar.html')
             .then(response => {
                 if (!response.ok) throw new Error("Error al cargar el navbar.html");
                 return response.text();
@@ -15,7 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 navbarContainer.innerHTML = data;
                 
                 // --- LÓGICA DE DETECCIÓN DE PÁGINA ACTIVA ---
-                const currentPath = window.location.pathname;
                 const navLinks = navbarContainer.querySelectorAll('.navbar-menu a, .dropdown-menu a');
                 
                 navLinks.forEach(link => {
@@ -32,18 +43,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 const bodyElement = document.body;
 
                 if (btnDecrease && btnReset && btnIncrease) {
-                    // Acción para disminuir el tamaño del texto (A-)
                     btnDecrease.addEventListener('click', () => {
                         bodyElement.classList.remove('font-size-increased');
                         bodyElement.classList.add('font-size-decreased');
                     });
 
-                    // Acción para restaurar al tamaño base original (A)
                     btnReset.addEventListener('click', () => {
                         bodyElement.classList.remove('font-size-increased', 'font-size-decreased');
                     });
 
-                    // Acción para aumentar el tamaño del texto (A+)
                     btnIncrease.addEventListener('click', () => {
                         bodyElement.classList.remove('font-size-decreased');
                         bodyElement.classList.add('font-size-increased');
@@ -56,7 +64,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // --- CARGA DEL FOOTER INSTITUCIONAL ---
     const footerContainer = document.getElementById('footer-container');
     if (footerContainer) {
-        fetch('./components/footer.html')
+        // Usamos la ruta inteligente calculada arriba
+        fetch(rutaBase + 'components/footer.html')
             .then(response => {
                 if (!response.ok) throw new Error("Error al cargar el footer.html");
                 return response.text();
@@ -66,6 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
             })
             .catch(err => console.error(err));
     }
+
 
     // ==========================================
     // 2. LÓGICA DE EXPANSIÓN INDEPENDIENTE DE TARJETAS (Clic)
