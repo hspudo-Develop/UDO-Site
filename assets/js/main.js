@@ -26,12 +26,25 @@ document.addEventListener("DOMContentLoaded", () => {
                 // Inyectamos el menú dinámicamente en el contenedor
                 navbarContainer.innerHTML = data;
                 
+                // 🌟 LA MAGIA: Corregimos los enlaces del menú dinámicamente
+                const allNavLinks = navbarContainer.querySelectorAll('a');
+                allNavLinks.forEach(link => {
+                    const href = link.getAttribute('href');
+                    // Solo modificamos enlaces internos (ignoramos redes sociales o correos)
+                    if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto:')) {
+                        // Limpiamos el enlace de puntos y barras iniciales accidentales
+                        const cleanHref = href.startsWith('./') ? href.substring(2) : href.startsWith('/') ? href.substring(1) : href;
+                        // Le pegamos la rutaBase matemática (./, ../ o ../../)
+                        link.setAttribute('href', rutaBase + cleanHref);
+                    }
+                });
+
                 // --- LÓGICA DE DETECCIÓN DE PÁGINA ACTIVA ---
                 const navLinks = navbarContainer.querySelectorAll('.navbar-menu a, .dropdown-menu a');
                 
                 navLinks.forEach(link => {
                     const href = link.getAttribute('href');
-                    if (currentPath === href || (href !== '/' && currentPath.includes(href))) {
+                    if (currentPath.endsWith(href) || (href !== 'index.html' && currentPath.includes(href.replace('../', '').replace('./', '')))) {
                         link.classList.add('active-nav-link');
                     }
                 });
@@ -72,6 +85,16 @@ document.addEventListener("DOMContentLoaded", () => {
             })
             .then(data => {
                 footerContainer.innerHTML = data;
+                
+                // 🌟 MAGIA EXTRA: Hacemos lo mismo por si en un futuro pones enlaces en tu footer
+                const allFooterLinks = footerContainer.querySelectorAll('a');
+                allFooterLinks.forEach(link => {
+                    const href = link.getAttribute('href');
+                    if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto:')) {
+                        const cleanHref = href.startsWith('./') ? href.substring(2) : href.startsWith('/') ? href.substring(1) : href;
+                        link.setAttribute('href', rutaBase + cleanHref);
+                    }
+                });
             })
             .catch(err => console.error(err));
     }
