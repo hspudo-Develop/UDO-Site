@@ -9,9 +9,6 @@
 body {
     font-family: 'Poppins', sans-serif;
     background: #F8F8F8;
-    
-    /* Espacio libre para que el contenido empiece debajo 
-       de la navbar (150px de banner + 60px de botonera = 210px) */
     padding-top: 210px; 
 }
 

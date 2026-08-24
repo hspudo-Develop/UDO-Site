@@ -5,13 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página no encontrada - Error 404</title>
     
-    <!-- Fuentes corporativas UDO -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
 
     <style>
-        /* ==========================================
-           🎨 VARIABLES GLOBALES DE MARCA UDO
-           ========================================== */
         :root {
             --udo-azul: #1167a4;
             --udo-azul-oscuro: #0b4b7a;
@@ -20,7 +16,6 @@
             --udo-gris: #a0a09f;
         }
 
-        /* Reseteo básico y Body */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -33,7 +28,6 @@
             overflow-x: hidden;
         }
 
-        /* 💧 MARCA DE AGUA GLOBAL (FONDO INCLINADO) */
         body::before {
             content: "";
             position: fixed; 
@@ -60,11 +54,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh; /* Ocupa toda la pantalla para centrar la tarjeta */
+            min-height: 100vh; 
             background: transparent; 
         }
 
-        /* Tarjeta principal blanca idéntica a manual-card */
+
         .error-udo-card {
             background: #FFFFFF; 
             border-radius: 24px; 
@@ -77,7 +71,6 @@
             font-family: 'Source Sans 3', sans-serif; 
         }
 
-        /* Área de encabezado con viñeta circular */
         .error-title-area {
             display: flex;
             align-items: center;
@@ -102,7 +95,6 @@
             font-weight: 600;
         }
 
-        /* Número gigante del error */
         .error-code {
             font-family: 'Poppins', sans-serif; 
             font-size: 110px;
@@ -128,7 +120,6 @@
             margin-bottom: 40px;
         }
 
-        /* Botón basado estrictamente en la clase .submit-btn */
         .udo-btn-volver {
             display: inline-block;
             background: var(--udo-azul); 
@@ -153,7 +144,6 @@
             transform: translateY(0); 
         }
 
-        /* Diseño Responsivo para Celulares */
         @media (max-width: 768px) {
             .error-udo-section {
                 padding: 60px 20px;
@@ -182,22 +172,18 @@
     <section class="error-udo-section">
         <div class="error-udo-card">
             
-            <!-- Área del encabezado con estilo de viñeta -->
             <div class="error-title-area">
                 <div class="error-bullet"></div>
                 <h2>Error de Navegación</h2>
             </div>
             
-            <!-- Código gigante del error -->
             <h1 class="error-code">404</h1>
             
-            <!-- Mensaje amigable -->
             <h3 class="error-subtitle">¡Vaya! Te has perdido.</h3>
             <p class="error-text">
                 El documento o la página que buscas no existe en el sistema, ha sido movida o escribiste mal la dirección.
             </p>
             
-            <!-- Botón de regreso con estilo premium UDO -->
             <a href="/UDO-Site/index.html" class="udo-btn-volver">Volver al Inicio</a>
             
         </div>

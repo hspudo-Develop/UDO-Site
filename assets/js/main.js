@@ -1,14 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
-
-    // --- RUTA INTELIGENTE ---
-    // Detectamos en qué nivel de carpeta estamos para ajustar la ruta de los fetch
     const currentPath = window.location.pathname;
-    let rutaBase = './'; // Ruta por defecto para el index.html
+    let rutaBase = './'; 
 
     if (currentPath.includes('/pages/documentos/')) {
-        rutaBase = '../../'; // Dos pasos atrás para los manuales
+        rutaBase = '../../'; 
     } else if (currentPath.includes('/pages/')) {
-        rutaBase = '../';    // Un paso atrás para consultas y documentos principales
+        rutaBase = '../';  
     }
 
     // ==========================================
@@ -16,25 +13,19 @@ document.addEventListener("DOMContentLoaded", () => {
     // ==========================================
     const navbarContainer = document.getElementById('navbar-container');
     if (navbarContainer) {
-        // Usamos la ruta inteligente calculada arriba
         fetch(rutaBase + 'components/navbar.html')
             .then(response => {
                 if (!response.ok) throw new Error("Error al cargar el navbar.html");
                 return response.text();
             })
             .then(data => {
-                // Inyectamos el menú dinámicamente en el contenedor
                 navbarContainer.innerHTML = data;
                 
-                // 🌟 LA MAGIA: Corregimos los enlaces del menú dinámicamente
                 const allNavLinks = navbarContainer.querySelectorAll('a');
                 allNavLinks.forEach(link => {
                     const href = link.getAttribute('href');
-                    // Solo modificamos enlaces internos (ignoramos redes sociales o correos)
                     if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto:')) {
-                        // Limpiamos el enlace de puntos y barras iniciales accidentales
                         const cleanHref = href.startsWith('./') ? href.substring(2) : href.startsWith('/') ? href.substring(1) : href;
-                        // Le pegamos la rutaBase matemática (./, ../ o ../../)
                         link.setAttribute('href', rutaBase + cleanHref);
                     }
                 });
@@ -175,37 +166,34 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (inputArchivo && inputArchivo.files.length > 0) {
                     const file = inputArchivo.files[0];
                     
-                    // Esperamos que el navegador lea el archivo y lo transforme en Base64
                     archivoProcesado = await new Promise((resolve, reject) => {
                         const reader = new FileReader();
                         reader.onload = () => {
                             resolve({
-                                base64: reader.result.split(',')[1], // Código puro del archivo
+                                base64: reader.result.split(',')[1], 
                                 mimeType: file.type,
                                 name: file.name
                             });
                         };
                         reader.onerror = error => reject(error);
-                        reader.readAsDataURL(file); // Iniciamos la lectura física
+                        reader.readAsDataURL(file); 
                     });
                 }
 
-                // 2. 📦 EMPAQUETAMOS LOS DATOS (Campos de texto + Estructura de archivo)
                 const data = { 
                     nombre: document.getElementById("nombre").value, 
                     correo: document.getElementById("correo").value, 
                     unidad: document.getElementById("unidad").value, 
                     tema: document.getElementById("tema").value, 
                     consulta: document.getElementById("consulta").value,
-                    archivo: archivoProcesado // Se inyecta la información o un valor null si va vacío
+                    archivo: archivoProcesado 
                 };
-                
-                // 3. 🚀 DISPARAMOS EL FETCH CON ESCUDO ANTI-CORS (Imprescindible para paquetes con Base64)
+            
                 await fetch(SCRIPT_URL, { 
                     method: "POST", 
-                    mode: "no-cors", // 🔥 Evita que el navegador detenga el envío del archivo pesado
+                    mode: "no-cors", 
                     headers: {
-                        "Content-Type": "text/plain" // Engañamos al cortafuegos del navegador
+                        "Content-Type": "text/plain" 
                     },
                     body: JSON.stringify(data) 
                 });
@@ -261,12 +249,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     voiceBtn.addEventListener('click', () => {
         if (!speaking) {
-            // Extraer títulos, párrafos, listas y etiquetas de forma inteligente
             const elements = document.querySelectorAll('h1, h2, h3, p, li, label');
             let textToRead = "";
 
             elements.forEach(el => {
-                // Filtro preventivo: ignoramos el menú de navegación y el pie de página
                 if (!el.closest('#navbar-container') && !el.closest('#footer-container') && !el.closest('.navbar') && !el.closest('.footer')) {
                     textToRead += el.innerText + ". ";
                 }
@@ -274,7 +260,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (textToRead.trim() === "") return;
 
-            // Configurar el motor de voz nativo en español
             utterance = new SpeechSynthesisUtterance(textToRead);
             utterance.lang = 'es-CL'; 
 
@@ -289,7 +274,6 @@ document.addEventListener("DOMContentLoaded", () => {
             voiceBtn.innerHTML = '⏹ Detener Lectura';
             voiceBtn.classList.add('is-reading');
         } else {
-            // Detener el motor gráfico de voz de inmediato
             window.speechSynthesis.cancel();
             speaking = false;
             voiceBtn.innerHTML = '🔊 Escuchar Página';
@@ -303,7 +287,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const dashboards = document.querySelectorAll('.dashboard-wrapper');
     
     if (dashboards.length > 0) {
-        // A. Creamos e inyectamos la estructura del Modal Global al final del body
         const modalElement = document.createElement('div');
         modalElement.id = 'looker-help-modal';
         modalElement.className = 'looker-modal';
@@ -350,17 +333,12 @@ document.addEventListener("DOMContentLoaded", () => {
         closeModalBtn.addEventListener('click', closeModal);
         backdropModal.addEventListener('click', closeModal);
 
-        // C. Por cada panel iframe que encontremos, le inyectamos su propia burbuja "?"
         dashboards.forEach(wrapper => {
             const helpBtn = document.createElement('button');
             helpBtn.className = 'looker-help-btn';
             helpBtn.innerHTML = '?';
-            helpBtn.setAttribute('title', 'Guía de uso del panel');
-            
-            // Al hacer clic en la burbuja de este panel, se abre el modal explicativo
+            helpBtn.setAttribute('title', 'Guía de uso del panel'); 
             helpBtn.addEventListener('click', openModal);
-            
-            // Lo inyectamos al principio del contenedor del panel
             wrapper.appendChild(helpBtn);
         });
     }
@@ -413,8 +391,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         closeBtn.addEventListener('click', closeConsultasModal);
         backdrop.addEventListener('click', closeConsultasModal);
-
-        // B. Creamos e inyectamos la burbuja "?" amarilla en la esquina superior de la caja de consultas
         const helpBtn = document.createElement('button');
         helpBtn.className = 'looker-help-btn';
         helpBtn.innerHTML = '?';
