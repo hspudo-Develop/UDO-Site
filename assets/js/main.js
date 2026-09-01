@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ==========================================
-    // 1. CARGA DE COMPONENTES DINÁMICOS (Navbar & Footer)
+    // 1.- CARGA NAVBAR FOOTER
     // ==========================================
     const navbarContainer = document.getElementById('navbar-container');
     if (navbarContainer) {
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 });
 
-                // --- LÓGICA DE DETECCIÓN DE PÁGINA ACTIVA ---
+
                 const navLinks = navbarContainer.querySelectorAll('.navbar-menu a, .dropdown-menu a');
                 
                 navLinks.forEach(link => {
@@ -40,7 +40,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 });
 
-                // --- ACCESIBILIDAD: SELECTOR DE TAMAÑO DE FUENTE (A+ / A-) ---
                 const btnDecrease = document.getElementById('font-decrease');
                 const btnReset = document.getElementById('font-reset');
                 const btnIncrease = document.getElementById('font-increase');
@@ -65,10 +64,9 @@ document.addEventListener("DOMContentLoaded", () => {
             .catch(err => console.error(err));
     }
 
-    // --- CARGA DEL FOOTER INSTITUCIONAL ---
     const footerContainer = document.getElementById('footer-container');
     if (footerContainer) {
-        // Usamos la ruta inteligente calculada arriba
+
         fetch(rutaBase + 'components/footer.html')
             .then(response => {
                 if (!response.ok) throw new Error("Error al cargar el footer.html");
@@ -77,7 +75,6 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(data => {
                 footerContainer.innerHTML = data;
                 
-                // 🌟 MAGIA EXTRA: Hacemos lo mismo por si en un futuro pones enlaces en tu footer
                 const allFooterLinks = footerContainer.querySelectorAll('a');
                 allFooterLinks.forEach(link => {
                     const href = link.getAttribute('href');
@@ -91,14 +88,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    // ==========================================
-    // 2. LÓGICA DE EXPANSIÓN INDEPENDIENTE DE TARJETAS (Clic)
-    // ==========================================
+
     const teamCards = document.querySelectorAll('.team-card');
     if (teamCards.length > 0) {
         teamCards.forEach(card => {
             card.addEventListener('click', function(event) { 
-                // Evitar la expansión si se hace clic en el texto del email o enlaces
                 if (event.target.classList.contains('contact-text') || event.target.tagName === 'A') { 
                     return; 
                 }
@@ -107,13 +101,10 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // ==========================================
-    // 3. EFECTO NAV-BAR ENCOLEGIBLE (Shrink on Scroll) - ¡FOOTER ANULADO POR COMPLETO!
-    // ==========================================
+
     window.addEventListener('scroll', () => { 
         const navbar = document.querySelector('.navbar'); 
         
-        // Mantener únicamente el shrinking superior de la barra de navegación
         if (navbar) { 
             if (window.scrollY > 50) { 
                 navbar.classList.add('shrink'); 
@@ -123,9 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
         } 
     });
 
-    // ==========================================
-    // 4. LÓGICA DE CENTRO DE ATENCIÓN UDO (Pestañas)
-    // ==========================================
+
     const tabButtons = document.querySelectorAll('.tab-button');
     const tabContents = document.querySelectorAll('.tab-content');
     
@@ -134,11 +123,9 @@ document.addEventListener("DOMContentLoaded", () => {
             button.addEventListener('click', function() { 
                 const targetTab = this.getAttribute('data-tab'); 
                 
-                // Quitar clases activas de todos los botones y contenidos
                 tabButtons.forEach(btn => btn.classList.remove('active')); 
                 tabContents.forEach(content => content.classList.remove('active')); 
                 
-                // Activar la pestaña seleccionada
                 this.classList.add('active'); 
                 const targetContent = document.getElementById(targetTab); 
                 if (targetContent) { 
@@ -147,10 +134,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }); 
         }); 
     }
-
-// ==========================================
-    // 5. ENVÍO DE FORMULARIO A GOOGLE SHEETS (CON ADJUNTO AL CORREO DIRECTO)
-    // ==========================================
     const consultaForm = document.getElementById('consultaForm');
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbytCM68luznGdNcsOvVwqtY-SAV1FP3rk-DeVMTFbdktVS4XZCfRDMky7KBR-ZrIAVI/exec";
     
@@ -159,7 +142,6 @@ document.addEventListener("DOMContentLoaded", () => {
             e.preventDefault(); 
             
             try { 
-                // 1. 🔍 CAPTURAMOS EL ARCHIVO FÍSICO DESDE EL HTML
                 const inputArchivo = document.getElementById('archivo-adjunto');
                 let archivoProcesado = null;
 
@@ -197,13 +179,12 @@ document.addEventListener("DOMContentLoaded", () => {
                     },
                     body: JSON.stringify(data) 
                 });
-                
-                // 4. 🎉 CONFIRMACIÓN DE ÉXITO INMEDIATA
+        
                 const mensajeExito = document.getElementById("mensajeExito");
                 if (mensajeExito) { 
                     mensajeExito.style.display = "block"; 
                 } 
-                this.reset(); // Reseteamos los campos del formulario por seguridad
+                this.reset(); 
 
             } catch (error) { 
                 console.error("Error detectado en la petición fetch:", error);
@@ -212,7 +193,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }); 
     }
     // ==========================================
-    // 6. BOTÓN FLOTANTE "VOLVER ARRIBA" (Esquina Inferior Derecha)
+    // 6. Boton Back
     // ==========================================
     const backToTopBtn = document.createElement('button');
     backToTopBtn.className = 'back-to-top-btn'; 
@@ -236,7 +217,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // ==========================================
-    // 7. LECTOR DE PANTALLA NATIVO GLOBAL (Esquina Inferior Izquierda)
+    // 7. Lector de pantalla
     // ==========================================
     const voiceBtn = document.createElement('button');
     voiceBtn.className = 'voice-reader-btn';
@@ -282,7 +263,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // ==========================================
-    // 🚀 8. MICRO-ASISTENTE DE GUÍA PARA LOOKER STUDIO
+    //  8. Asistencia
     // ==========================================
     const dashboards = document.querySelectorAll('.dashboard-wrapper');
     
@@ -321,12 +302,8 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
         `;
         document.body.appendChild(modalElement);
-
-        // B. Seleccionamos los elementos de control del modal recién creado
         const closeModalBtn = modalElement.querySelector('.looker-modal-close');
         const backdropModal = modalElement.querySelector('.looker-modal-backdrop');
-
-        // Funciones para abrir y cerrar el modal
         const openModal = () => modalElement.classList.add('is-active');
         const closeModal = () => modalElement.classList.remove('is-active');
 
@@ -344,14 +321,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ==========================================
-    // 🚀 9. MICRO-ASISTENTE DE GUÍA PARA CENTRO DE ATENCIÓN
+    //  9. Asistencia
     // ==========================================
     const consultasContainer = document.querySelector('.consultas-container');
     if (consultasContainer) {
-        // A. Creamos el modal explicativo exclusivo para la página de Consultas
         const consultasModal = document.createElement('div');
         consultasModal.id = 'consultas-help-modal';
-        consultasModal.className = 'looker-modal'; // Reutiliza la misma estructura modal animada
+        consultasModal.className = 'looker-modal';
         consultasModal.innerHTML = `
             <div class="looker-modal-backdrop"></div>
             <div class="looker-modal-content">
@@ -407,7 +383,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // ==========================================
-    // 🚀 10. MÓDULO RESIDENCIAL: REPOSITORIO CÍCLICO CON BUSCADOR, MODAL Y BADGE EN TIEMPO REAL
+    //  10.Archivos de Drive
     // ==========================================
     const pinterestFeed = document.getElementById('pinterest-pdf-feed');
     const inputBuscador = document.getElementById('udo-doc-search');
@@ -418,8 +394,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (pinterestFeed) {
         console.log("Iniciando repositorio inteligente con Badge de Novedad UDO...");
-        
-        // Inyección dinámica de la estructura base del modal (Asegura compatibilidad limpia)
         if (!document.getElementById('udo-pdf-modal')) {
             const estructuraModal = document.createElement('div');
             estructuraModal.id = 'udo-pdf-modal';
@@ -453,7 +427,6 @@ document.addEventListener("DOMContentLoaded", () => {
             document.addEventListener('keydown', (e) => { if (e.key === "Escape" && estructuraModal.classList.contains('is-open')) cerrarModalUDO(); });
         }
 
-        // Conexión con tu Web App de Google Apps Script recién guardada
         fetch(API_LEER_DRIVE)
             .then(response => { if (!response.ok) throw new Error("Fallo de red"); return response.json(); })
             .then(documentos => {
@@ -497,25 +470,17 @@ document.addEventListener("DOMContentLoaded", () => {
             card.className = 'pdf-pinterest-card';
             const proxyPortadaUrl = `https://drive.google.com/thumbnail?id=${doc.id}&sz=w500`;
 
-            // =======================================================
-            // 🎯 MOTOR MATEMÁTICO: CALCULAR AJUSTE DE NOVEDAD (BADGE)
-            // =======================================================
             let badgeHTML = '';
             if (doc.fecha) {
                 const fechaCreacion = new Date(doc.fecha);
                 const fechaHoy = new Date();
-                
-                // Calculamos la diferencia en milisegundos y la transformamos a días físicos
                 const diferenciaTiempo = fechaHoy - fechaCreacion;
                 const diferenciaDias = Math.floor(diferenciaTiempo / (1000 * 60 * 60 * 24));
-
-                // Si el archivo tiene entre 0 y 15 días de vida en Drive, se gana el Badge de Nuevo
                 if (diferenciaDias <= 15 && diferenciaDias >= 0) {
                 badgeHTML = `<span class="udo-badge-nuevo">✦ NUEVO</span>`;
                 }
             }
 
-            // Inyectamos el HTML de la tarjeta incorporando el badge calculado
             card.innerHTML = `
                 ${badgeHTML}
                 <div class="card-overlay"><h4 class="card-title">✦ ${doc.titulo}</h4></div>
@@ -599,29 +564,24 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ==========================================
-// 🔊 11. MÓDULO SATÉLITE TOTALMENTE INDEPENDIENTE: MOTOR DE AUDIO ACCESIBLE
+//  11. Audio 2
 // ==========================================
 (function() {
     "use strict";
 
-    // Delegación de Eventos Global en el Body: Captura el click del botón de audio esté donde esté
     document.body.addEventListener('click', (e) => {
         const btnAudio = e.target.closest('#udo-narrador-trigger');
-        if (!btnAudio) return; // Si no es el botón de voz, ignoramos el click por completo
+        if (!btnAudio) return; 
         
         e.preventDefault();
 
-        // 🔀 ACCIÓN TOGGLE: Si la voz ya estaba hablando en el hospital, el click la detiene de inmediato
         if (window.speechSynthesis && window.speechSynthesis.speaking) {
             window.speechSynthesis.cancel();
             resetearEstilosBotonVoz(btnAudio);
             return;
         }
 
-        // 🧠 DESACOPLAMIENTO ABSOLUTO: Rescatamos el título directo desde el atributo 'data-titulo' del DOM
         const tituloDocumento = btnAudio.getAttribute('data-titulo') || "Documento General Institucional";
-
-        // Redacción del libreto de locución oficial adaptado para accesibilidad
         const mensajeOficial = `Usted está visualizando el documento oficial de la Unidad de Desarrollo Organizacional titulado: ${tituloDocumento}. Puede leerlo en el visor central o descargarlo directamente usando los comandos del extremo superior derecho del lector.`;
 
         if (!window.speechSynthesis) {
@@ -630,22 +590,17 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         const enunciadoLectura = new SpeechSynthesisUtterance(mensajeOficial);
-        enunciadoLectura.lang = 'es-CL'; // Configurado con acento local en español
-        enunciadoLectura.rate = 0.95;    // Velocidad pausada y clara para entornos de salud
-
-        // El botón vuelve a su estado normal de forma automática cuando la lectura termina con éxito
+        enunciadoLectura.lang = 'es-CL'; 
+        enunciadoLectura.rate = 0.95;   
         enunciadoLectura.onend = () => { resetearEstilosBotonVoz(btnAudio); };
         enunciadoLectura.onerror = () => { resetearEstilosBotonVoz(btnAudio); };
 
-        // Activamos la animación visual de onda verde y disparamos el sintetizador
+
         btnAudio.classList.add('is-playing');
         btnAudio.querySelector('.audio-text').textContent = "Detener Voz";
         window.speechSynthesis.speak(enunciadoLectura);
     });
 
-    // 🚨 SEGURO DE AUDIO PERPETUO (LIFECYCLE HOOKS):
-    // El motor de voz escucha de forma independiente si el usuario cierra el modal o aprieta Escape.
-    // Si detecta un cierre, apaga los altavoces inmediatamente para que la voz no quede hablando sola.
     document.body.addEventListener('click', (e) => {
         if (e.target.closest('.udo-modal-close') || e.target.classList.contains('udo-modal-overlay')) {
             apagarAltavocesGlobales();
@@ -682,30 +637,26 @@ document.addEventListener("DOMContentLoaded", () => {
 document.getElementById('form-consultas').addEventListener('submit', function(e) {
     e.preventDefault();
 
-    // 1. 🚀 LANZAMOS LA ALERTA DE CARGA (Bloquea la pantalla)
     Swal.fire({
         title: 'Procesando solicitud...',
         html: 'Estamos subiendo tu archivo y generando el ticket.<br><b>Por favor, no cierres esta ventana.</b>',
-        allowOutsideClick: false, // Evita que se cierre si el usuario hace clic afuera
-        showConfirmButton: false, // Oculta el botón de "OK"
+        allowOutsideClick: false, 
+        showConfirmButton: false, 
         didOpen: () => {
-            Swal.showLoading(); // 🌀 Activa la ruedita nativa de SweetAlert
+            Swal.showLoading(); 
         }
     });
 
-    // 2. FUNCIÓN INTERNA QUE HACE EL ENVÍO A GOOGLE
     const enviarDatosAGoogle = (archivoProcesado) => {
-        // Empaquetamos los datos del formulario
         const datosConsulta = {
             nombre: document.getElementById('nombre').value,
             correo: document.getElementById('correo').value,
             unidad: document.getElementById('unidad').value,
             tema: document.getElementById('tema').value,
             consulta: document.getElementById('consulta').value,
-            archivo: archivoProcesado // Puede traer el Base64 o venir nulo
+            archivo: archivoProcesado 
         };
 
-        // Reemplaza por tu URL real de Apps Script
         const SCRIPT_URL = "TU_URL_DE_GOOGLE_AQUI"; 
 
         fetch(SCRIPT_URL, {
@@ -715,20 +666,18 @@ document.getElementById('form-consultas').addEventListener('submit', function(e)
         .then(response => response.json())
         .then(data => {
             if(data.result === "success") {
-                // 🎉 ÉXITO: Transformamos la ruedita en un Check Verde
                 Swal.fire({
                     icon: 'success',
                     title: '¡Solicitud Enviada!',
                     text: 'El comprobante oficial ha sido despachado a tu correo.',
                     confirmButtonColor: '#10B981'
                 });
-                document.getElementById('form-consultas').reset(); // Vaciamos el formulario
+                document.getElementById('form-consultas').reset(); 
             } else {
                 throw new Error("Fallo interno en Google");
             }
         })
         .catch(error => {
-            // ❌ ERROR: Transformamos la ruedita en una X Roja
             console.error(error);
             Swal.fire({
                 icon: 'error',
@@ -739,14 +688,12 @@ document.getElementById('form-consultas').addEventListener('submit', function(e)
         });
     };
 
-    // 3. CAPTURAMOS EL ARCHIVO (Para pasarlo a Base64 sin usar async/await)
-    const inputArchivo = document.getElementById('archivo-adjunto'); // Revisa que este ID sea el correcto
+
+    const inputArchivo = document.getElementById('archivo-adjunto'); 
     
     if (inputArchivo && inputArchivo.files.length > 0) {
         const file = inputArchivo.files[0];
         const reader = new FileReader();
-        
-        // Cuando termine de leer el PDF/Imagen, dispara la función de envío
         reader.onload = function(event) {
             const base64Content = event.target.result.split(',')[1];
             enviarDatosAGoogle({
@@ -755,23 +702,19 @@ document.getElementById('form-consultas').addEventListener('submit', function(e)
                 name: file.name
             });
         };
-        reader.readAsDataURL(file); // Inicia la lectura del archivo físico
+        reader.readAsDataURL(file); 
     } else {
-        // Si el compadre no adjuntó ningún archivo, mandamos la solicitud directo con valor 'null'
         enviarDatosAGoogle(null);
     }
 });
 
 
 window.addEventListener('scroll', () => {
-    // Calcula qué tan abajo está el usuario en la página
     const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
     const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     
-    // Lo convierte en un porcentaje (0 a 100)
     const scrolled = (winScroll / height) * 100;
     
-    // Inyecta el porcentaje al ancho de la barrita
     const progressBar = document.getElementById('udoProgressBar');
     if(progressBar) {
         progressBar.style.width = scrolled + '%';
