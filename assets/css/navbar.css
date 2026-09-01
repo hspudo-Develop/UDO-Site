@@ -200,7 +200,7 @@ body {
 }
 
 .font-btn:active {
-    transform: translateY(0) scale(0.95); /* Sensación de presión física */
+    transform: translateY(0) scale(0.95); 
 }
 
 /* HAMBURGER (MÓVIL) */
