@@ -1,18 +1,18 @@
-/* RESET */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* BODY */
+
 body {
     font-family: 'Poppins', sans-serif;
     background: #F8F8F8;
     padding-top: 210px; 
 }
 
-/* NAVBAR (CONTENEDOR MAESTRO FIXED) */
+
 .navbar {
     position: fixed; 
     top: 0;
@@ -24,9 +24,7 @@ body {
     z-index: 9999;
 }
 
-/* ==========================================
-   CABECERA BANNER INSTITUCIONAL HSP
-   ========================================== */
+
 .hospital-banner {
     width: 100%;
     height: 150px; 
@@ -38,7 +36,7 @@ body {
     transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Filtro oscuro en gradiente azul para el contraste */
+
 .hospital-banner::before {
     content: "";
     position: absolute;
@@ -50,7 +48,7 @@ body {
     pointer-events: none;
 }
 
-/* Contenedor Interno del Banner */
+
 .banner-container {
     max-width: 1400px;
     margin: auto;
@@ -63,7 +61,7 @@ body {
     z-index: 2;
 }
 
-/* Enlace contenedor del logo */
+
 .banner-logo-link {
     display: flex;
     align-items: center;
@@ -76,7 +74,7 @@ body {
     transform: scale(1.02);
 }
 
-/* Logo Blanco */
+
 .hospital-logo-img {
     max-height: 90px; 
     width: auto;
@@ -84,16 +82,12 @@ body {
     transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ==========================================
-   CONTAINER DE LA BOTONERA BLANCA (NUEVO LAYOUT)
-   ========================================== */
+
 .navbar-container {
     max-width: 1400px;
     height: 60px; 
     margin: auto;
     padding: 0 40px;
-    
-    /* 🎯 Flexbox: Empuja el menú al margen izquierdo y los botones al derecho */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -101,7 +95,7 @@ body {
     transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* MENU (ALINEADO A LA IZQUIERDA) */
+
 .navbar-menu {
     display: flex;
     align-items: center;
@@ -109,7 +103,7 @@ body {
     list-style: none;
 }
 
-/* LINKS */
+
 .navbar-menu a {
     text-decoration: none;
     color: #2B2B2B;
@@ -122,7 +116,7 @@ body {
     color: var(--udo-amarillo, #f6b01c); 
 }
 
-/* DROPDOWN */
+
 .dropdown {
     position: relative;
 }
@@ -130,7 +124,7 @@ body {
 .dropdown-menu {
     position: absolute;
     top: 100%;
-    left: 0; /* Al estar a la izquierda, el menú cae naturalmente hacia la derecha */
+    left: 0; 
     transform: translateY(10px); 
     min-width: 280px;
     background: #FFFFFF;
@@ -164,25 +158,23 @@ body {
     margin-left: 8px;
 }
 
-/* ==========================================
-   BOTONES DE ACCESIBILIDAD (DISEÑO AMIGABLE)
-   ========================================== */
+
 .font-accessibility-selector {
     display: flex;
     align-items: center;
-    gap: 12px; /* Separación amigable entre botones */
+    gap: 12px; 
 }
 
-/* Diseño "Squircle" (Cuadrado redondeado premium) */
+
 .font-btn {
     background: #FFFFFF;
-    border: 2px solid #E5EAF2; /* Borde gris muy suave */
-    color: var(--udo-azul, #1167a4); /* Letra azul institucional */
+    border: 2px solid #E5EAF2;
+    color: var(--udo-azul, #1167a4); 
     width: 40px;
     height: 40px;
     font-size: 14px;
     font-weight: 700;
-    border-radius: 12px; /* Curvatura amigable y moderna */
+    border-radius: 12px; 
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -195,7 +187,7 @@ body {
     background: var(--udo-amarillo, #f6b01c);
     color: #FFFFFF;
     border-color: var(--udo-amarillo, #f6b01c);
-    transform: translateY(-3px); /* Pequeño salto amigable */
+    transform: translateY(-3px); 
     box-shadow: 0 6px 16px rgba(246, 176, 28, 0.3);
 }
 
@@ -203,7 +195,6 @@ body {
     transform: translateY(0) scale(0.95); 
 }
 
-/* HAMBURGER (MÓVIL) */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -218,7 +209,7 @@ body {
     border-radius: 20px;
 }
 
-/* RESPONSIVE */
+
 @media (max-width: 980px) {
     body {
         padding-top: 160px; 
@@ -238,22 +229,19 @@ body {
     }
 }
 
-/* ==========================================
-   EFECTO ENCOGIENDO (SHRINK) AL BAJAR
-   ========================================== */
 
-/* 1. Al bajar, el banner se encoge de forma compacta */
+
 .navbar.shrink .hospital-banner {
     height: 65px; 
     opacity: 1;   
 }
 
-/* 2. El logo blanco se escala automáticamente */
+
 .navbar.shrink .hospital-logo-img {
     max-height: 42px; 
 }
 
-/* 3. La botonera blanca se compacta sutilmente */
+
 .navbar.shrink .navbar-container {
     height: 50px; 
 }
